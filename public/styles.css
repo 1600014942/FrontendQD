@@ -614,7 +614,12 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
 .loop .diagram-heading { text-align: center; }
 .misallocation .diagram-heading .section-kicker,
 .frontier .diagram-heading .section-kicker,
-.loop .diagram-heading .section-kicker { font-size: 14px; text-align: center; }
+.loop .diagram-heading .section-kicker {
+  font-size: 24px;
+  line-height: 1.35;
+  letter-spacing: .06em;
+  text-align: center;
+}
 .misallocation .diagram-figure,
 .frontier .diagram-figure,
 .loop .diagram-figure { text-align: center; }
