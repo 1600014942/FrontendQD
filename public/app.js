@@ -338,8 +338,8 @@ function homeHtml() {
         <p class="hero-deck">AI 产能配置引擎，帮助用户在同样预算下，完成更多高质量任务</p>
         <div class="hero-data">
           <div class="metric-grid">
-            <div class="metric"><div class="metric-label">已为开发者节省</div><div class="metric-value" id="live-savings">¥ 84,279.01</div></div>
-            <div class="metric"><div class="metric-label">累计节省 <span class="latin">Token</span></div><div class="metric-value" id="live-tokens">1.2800B</div></div>
+            <div class="metric is-live"><div class="metric-label">已为开发者节省</div><div class="metric-value" id="live-savings">¥ 84,279.01</div></div>
+            <div class="metric is-live"><div class="metric-label">累计节省 <span class="latin">Token</span></div><div class="metric-value" id="live-tokens">1.2800B</div></div>
             <div class="metric"><div class="metric-label">任务效能利用率提升</div><div class="metric-value" id="live-efficiency">29.4%</div></div>
             <div class="metric"><div class="metric-label">任务级稳定性</div><div class="metric-value">99.99%</div></div>
           </div>
