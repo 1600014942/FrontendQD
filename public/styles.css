@@ -608,6 +608,18 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
 .testimonial-card footer span { font-size: 13px; }
 .instrument-time { font-size: 13px; }
 
+/* Diagram index labels and figure notes need to remain readable after SVG scaling. */
+.misallocation .diagram-heading,
+.frontier .diagram-heading,
+.loop .diagram-heading { text-align: center; }
+.misallocation .diagram-heading .section-kicker,
+.frontier .diagram-heading .section-kicker,
+.loop .diagram-heading .section-kicker { font-size: 14px; text-align: center; }
+.misallocation .diagram-figure,
+.frontier .diagram-figure,
+.loop .diagram-figure { text-align: center; }
+.diagram-svg .diagram-footnote { font-size: 24px; text-anchor: middle; }
+
 @media (max-width: 1100px) {
   .hero-source { height: 430px; right: 50%; top: 4%; transform: translateX(50%); animation: none; }
   .misallocation .diagram-heading,
