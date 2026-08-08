@@ -348,7 +348,6 @@ function homeHtml() {
       </div>
       <div class="hero-visual" aria-label="清度原始流线场球体主视觉">
         <img class="hero-source" src="/assets/figures/hero-ball-transparent.png" alt="由细密流线构成的黑白球体，清度科技原始主视觉">
-        <canvas class="hero-particles" aria-hidden="true"></canvas>
       </div>
     </div></section>
 
@@ -515,101 +514,6 @@ function initLiveMetrics() {
         [savings, tokens].forEach(el => { el.classList.remove('is-updating'); void el.offsetWidth; el.classList.add('is-updating'); });
     }, 3200);
 }
-function initHeroParticleFlow() {
-    const image = document.querySelector('.hero-source');
-    const canvas = document.querySelector('.hero-particles');
-    if (!image || !canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches)
-        return;
-    const start = () => {
-        const width = image.naturalWidth, height = image.naturalHeight;
-        if (!width || !height)
-            return;
-        const source = document.createElement('canvas');
-        source.width = width;
-        source.height = height;
-        const sourceContext = source.getContext('2d', { willReadFrequently: true });
-        if (!sourceContext)
-            return;
-        sourceContext.drawImage(image, 0, 0, width, height);
-        const pixels = sourceContext.getImageData(0, 0, width, height).data;
-        const luma = (x, y) => { const px = Math.max(0, Math.min(width - 1, Math.round(x))), py = Math.max(0, Math.min(height - 1, Math.round(y))), i = (py * width + px) * 4, alpha = pixels[i + 3] / 255; return alpha < .02 ? 255 : (pixels[i] * .299 + pixels[i + 1] * .587 + pixels[i + 2] * .114) * alpha + 255 * (1 - alpha); };
-        const inOrb = (x, y) => Math.hypot(x - width * .5, y - height * .475) < width * .425;
-        const seed = (particle) => {
-            for (let attempt = 0; attempt < 900; attempt += 1) {
-                const x = width * (.08 + Math.random() * .84), y = height * (.06 + Math.random() * .82);
-                if (inOrb(x, y) && luma(x, y) < 205) {
-                    particle.x = x;
-                    particle.y = y;
-                    particle.vx = 0;
-                    particle.vy = 0;
-                    particle.life = 0;
-                    return;
-                }
-            }
-            particle.x = width * .5;
-            particle.y = height * .48;
-            particle.vx = 1;
-            particle.vy = 0;
-            particle.life = 0;
-        };
-        const tangent = (x, y, vx, vy) => {
-            const gx = luma(x + 2, y) - luma(x - 2, y), gy = luma(x, y + 2) - luma(x, y - 2), magnitude = Math.hypot(gx, gy);
-            if (magnitude < 5)
-                return null;
-            let tx = -gy / magnitude, ty = gx / magnitude;
-            if (vx * tx + vy * ty < 0) {
-                tx = -tx;
-                ty = -ty;
-            }
-            return { x: tx, y: ty };
-        };
-        const particles = Array.from({ length: 30 }, () => { const particle = { x: 0, y: 0, vx: 0, vy: 0, life: 0 }; seed(particle); return particle; });
-        const context = canvas.getContext('2d');
-        if (!context)
-            return;
-        let frame = 0, last = performance.now();
-        const resize = () => { const rect = canvas.getBoundingClientRect(), ratio = Math.min(window.devicePixelRatio || 1, 2); canvas.width = Math.round(rect.width * ratio); canvas.height = Math.round(rect.height * ratio); context.setTransform(ratio, 0, 0, ratio, 0, 0); };
-        const draw = (now) => {
-            const delta = Math.min((now - last) / 1000, .04);
-            last = now;
-            const rect = canvas.getBoundingClientRect();
-            context.clearRect(0, 0, rect.width, rect.height);
-            particles.forEach(particle => {
-                const direction = tangent(particle.x, particle.y, particle.vx, particle.vy);
-                if (!direction || !inOrb(particle.x, particle.y) || particle.life > 11) {
-                    seed(particle);
-                    return;
-                }
-                particle.vx = particle.vx * .72 + direction.x * .28;
-                particle.vy = particle.vy * .72 + direction.y * .28;
-                const velocity = Math.hypot(particle.vx, particle.vy) || 1;
-                particle.vx /= velocity;
-                particle.vy /= velocity;
-                particle.x += particle.vx * 52 * delta;
-                particle.y += particle.vy * 52 * delta;
-                particle.life += delta;
-                const drawX = particle.x / width * rect.width, drawY = particle.y / height * rect.height;
-                context.beginPath();
-                context.arc(drawX, drawY, 3.1, 0, Math.PI * 2);
-                context.fillStyle = 'rgba(247,246,242,.9)';
-                context.fill();
-                context.beginPath();
-                context.arc(drawX, drawY, 1.85, 0, Math.PI * 2);
-                context.fillStyle = 'rgba(17,17,17,.86)';
-                context.fill();
-            });
-            frame = requestAnimationFrame(draw);
-        };
-        resize();
-        window.addEventListener('resize', resize, { passive: true });
-        frame = requestAnimationFrame(draw);
-        window.addEventListener('pagehide', () => cancelAnimationFrame(frame), { once: true });
-    };
-    if (image.complete)
-        start();
-    else
-        image.addEventListener('load', start, { once: true });
-}
 function initTestimonials() {
     const el = document.querySelector('.testimonial-viewport');
     if (!el)
@@ -692,7 +596,6 @@ function render() {
     initReveal();
     initCalculator();
     initLiveMetrics();
-    initHeroParticleFlow();
     initTestimonials();
     initBooking();
 }

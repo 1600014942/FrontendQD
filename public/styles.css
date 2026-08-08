@@ -502,18 +502,6 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
 }
 
 .hero-source { height: 84%; right: 4%; top: 7%; }
-.hero-particles {
-  position: absolute;
-  z-index: 1;
-  right: 4%;
-  top: 7%;
-  height: 84%;
-  width: auto;
-  aspect-ratio: 1;
-  overflow: visible;
-  pointer-events: none;
-  animation: heroFloat 11s ease-in-out infinite;
-}
 
 .logo-strip-frame { position: relative; margin-inline: auto; }
 
@@ -707,11 +695,10 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
 @media (prefers-reduced-motion: reduce) {
   .misallocation .route-path,
   .frontier .route-path { animation: none; stroke-dashoffset: 0; }
-  .hero-particles { display: none; animation: none; }
 }
 
 @media (max-width: 1100px) {
-  .hero-source, .hero-particles { height: 430px; right: 50%; top: 4%; transform: translateX(50%); animation: none; }
+  .hero-source { height: 430px; right: 50%; top: 4%; transform: translateX(50%); animation: none; }
   .misallocation .diagram-heading,
   .frontier .diagram-heading,
   .loop .diagram-heading { text-align: center; }
@@ -727,7 +714,7 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
 }
 
 @media (max-width: 767px) {
-  .hero-source, .hero-particles { height: 315px; right: 50%; top: 0; transform: translateX(50%); }
+  .hero-source { height: 315px; right: 50%; top: 0; transform: translateX(50%); }
   .misallocation .diagram-figure,
   .frontier .diagram-figure,
   .loop .diagram-figure { width: 100%; }
