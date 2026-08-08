@@ -515,7 +515,7 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
 .misallocation .diagram-figure,
 .frontier .diagram-figure {
   grid-column: 2 / 12;
-  width: 80%;
+  width: 96%;
   justify-self: center;
 }
 .loop .diagram-heading { grid-column: 2 / 11; }
@@ -523,7 +523,7 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
 .loop .diagram-heading .section-title,
 .loop .diagram-heading .section-subtitle { text-align: center; }
 .loop .diagram-heading .section-subtitle { margin-inline: auto; }
-.loop .diagram-figure { grid-column: 2 / 12; width: 94%; justify-self: center; }
+.loop .diagram-figure { grid-column: 1 / -1; width: 94%; justify-self: center; }
 
 .calculator-title-row,
 .calculator-shell { width: 80%; margin-inline: auto; }
@@ -648,7 +648,7 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
   .loop .diagram-heading { text-align: center; }
   .misallocation .diagram-figure,
   .frontier .diagram-figure,
-  .loop .diagram-figure { width: 80%; margin-inline: auto; }
+  .loop .diagram-figure { width: 96%; margin-inline: auto; }
   .calculator-title-row,
   .calculator-shell { width: 100%; }
   .calculator-shell { grid-template-columns: 1fr; }
