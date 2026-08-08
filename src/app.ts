@@ -325,16 +325,18 @@ function capacityLoopSvg(): string {
   const node = (x:number,w:number,label:string,dark=false) => `<rect x="${x}" y="145" width="${w}" height="58" rx="10" class="${dark ? 'node-dark' : 'node-light'}"/><text x="${x+w/2}" y="181" text-anchor="middle" class="${dark ? 'node-text-dark' : 'node-text'}">${label}</text>`;
   return `<svg class="diagram-svg loop-svg" viewBox="0 0 1440 720" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <defs><marker id="arrow-loop" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor"/></marker></defs>
-    <g>${node(55,130,'任务识别')}${node(260,130,'任务画像')}${node(465,150,'清度路由器',true)}${node(700,130,'执行调用')}${node(900,130,'质量验证')}${node(1105,130,'能力账本')}</g>
-    <g fill="none" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrow-loop)">
+    <g transform="translate(75 0)">${node(55,130,'任务识别')}${node(260,130,'任务画像')}${node(465,150,'清度路由器',true)}${node(700,130,'执行调用')}${node(900,130,'质量验证')}${node(1105,130,'能力账本')}</g>
+    <g transform="translate(75 0)" fill="none" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrow-loop)">
       <line x1="185" y1="174" x2="245" y2="174"/><line x1="390" y1="174" x2="450" y2="174"/><line x1="615" y1="174" x2="685" y2="174"/><line x1="830" y1="174" x2="885" y2="174"/><line x1="1030" y1="174" x2="1090" y2="174"/>
       <path class="route-path" d="M1170 214 C1170 380 1030 518 750 555 C485 590 255 535 220 415 C205 365 260 330 365 318 C430 310 505 288 525 220"/>
     </g>
-    <g fill="currentColor">
+    <g transform="translate(75 0)" fill="currentColor">
       <circle cx="220" cy="415" r="6"/><circle cx="390" cy="541" r="6"/><circle cx="620" cy="560" r="6"/><circle cx="855" cy="535" r="6"/><circle cx="1045" cy="455" r="6"/>
     </g>
     <g class="diagram-labels">
+      <g transform="translate(75 0)">
       <text x="220" y="448" text-anchor="middle">成本</text><text x="390" y="578" text-anchor="middle">质量</text><text x="620" y="596" text-anchor="middle">回退方案</text><text x="855" y="569" text-anchor="middle">接受率</text><text x="1045" y="489" text-anchor="middle">延迟</text>
+      </g>
       <text x="720" y="405" text-anchor="middle" class="loop-title">私有产能曲线</text>
     </g>
   </svg>`;
