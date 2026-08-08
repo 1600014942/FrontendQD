@@ -497,8 +497,7 @@ function initCalculator() {
 function initLiveMetrics() {
     const savings = document.querySelector('#live-savings');
     const tokens = document.querySelector('#live-tokens');
-    const efficiency = document.querySelector('#live-efficiency');
-    if (!savings || !tokens || !efficiency || window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+    if (!savings || !tokens || window.matchMedia('(prefers-reduced-motion: reduce)').matches)
         return;
     let saved = 84279.01, tokenTotal = 1.2800, tick = 0;
     window.setInterval(() => {
@@ -507,8 +506,7 @@ function initLiveMetrics() {
         tokenTotal += .00001;
         savings.textContent = `¥ ${saved.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
         tokens.textContent = `${tokenTotal.toFixed(4)}B`;
-        efficiency.textContent = `${(29.4 + (tick % 3) * .1).toFixed(1)}%`;
-        [savings, tokens, efficiency].forEach(el => { el.classList.remove('is-updating'); void el.offsetWidth; el.classList.add('is-updating'); });
+        [savings, tokens].forEach(el => { el.classList.remove('is-updating'); void el.offsetWidth; el.classList.add('is-updating'); });
     }, 3200);
 }
 function initTestimonials() {
