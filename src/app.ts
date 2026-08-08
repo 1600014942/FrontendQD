@@ -528,7 +528,7 @@ function initHeroParticleFlow(): void {
     if(!sourceContext)return;
     sourceContext.drawImage(image,0,0,width,height);
     const pixels=sourceContext.getImageData(0,0,width,height).data;
-    const luma=(x:number,y:number)=>{const px=Math.max(0,Math.min(width-1,Math.round(x))),py=Math.max(0,Math.min(height-1,Math.round(y))),i=(py*width+px)*4;return pixels[i]*.299+pixels[i+1]*.587+pixels[i+2]*.114;};
+    const luma=(x:number,y:number)=>{const px=Math.max(0,Math.min(width-1,Math.round(x))),py=Math.max(0,Math.min(height-1,Math.round(y))),i=(py*width+px)*4,alpha=pixels[i+3]/255;return alpha<.02?255:(pixels[i]*.299+pixels[i+1]*.587+pixels[i+2]*.114)*alpha+255*(1-alpha);};
     const inOrb=(x:number,y:number)=>Math.hypot(x-width*.5,y-height*.475)<width*.425;
     type Particle={x:number;y:number;vx:number;vy:number;life:number};
     const seed=(particle:Particle)=>{
