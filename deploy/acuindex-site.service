@@ -1,0 +1,16 @@
+[Unit]
+Description=ACUindex public website
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/root/jerry/FrontendQD
+Environment=NODE_ENV=production
+Environment=PORT=4173
+ExecStart=/usr/bin/node /root/jerry/FrontendQD/server.mjs
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
