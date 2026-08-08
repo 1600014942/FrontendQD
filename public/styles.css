@@ -492,3 +492,137 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
   .testimonial-image { width: 84vw; }
   .final-title { font-size: 42px; }
 }
+
+/* 2026-08-08 homepage precision pass and shared type scale */
+.metric-value { transition: opacity .22s ease; }
+.metric-value.is-updating { animation: metricRefresh .42s ease-out; }
+@keyframes metricRefresh {
+  0% { opacity: .64; transform: translateY(1px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.hero-source { height: 84%; right: 4%; top: 7%; }
+
+.logo-strip-frame { position: relative; margin-inline: auto; }
+
+.misallocation .diagram-heading,
+.frontier .diagram-heading {
+  grid-column: 2 / 12;
+  text-align: center;
+}
+.misallocation .diagram-heading .section-title,
+.frontier .diagram-heading .section-title { max-width: 980px; margin-inline: auto; }
+.misallocation .diagram-figure,
+.frontier .diagram-figure {
+  grid-column: 2 / 12;
+  width: 80%;
+  justify-self: center;
+}
+.loop .diagram-heading { grid-column: 2 / 11; }
+.loop .diagram-heading .section-kicker,
+.loop .diagram-heading .section-title,
+.loop .diagram-heading .section-subtitle { text-align: center; }
+.loop .diagram-heading .section-subtitle { margin-inline: auto; }
+.loop .diagram-figure { grid-column: 2 / 12; width: 94%; justify-self: center; }
+
+.calculator-title-row,
+.calculator-shell { width: 80%; margin-inline: auto; }
+.calculator-shell { grid-template-columns: 48% 52%; }
+.calculator-controls { padding: 40px 42px 28px; }
+.control-row { grid-template-columns: 150px 1fr; gap: 24px; min-height: 88px; }
+.control-label { font-size: 16px; }
+.segmented { gap: 10px; }
+.segmented button { min-height: 48px; }
+.savings-panel { padding: 40px 42px 32px; }
+.savings-row { font-size: 16px; padding: 14px 0; }
+.savings-row strong { font-size: 20px; }
+.savings-amount { font-size: clamp(58px, 4.5vw, 82px); }
+.savings-main { gap: 16px; }
+
+.testimonial-track { gap: clamp(18px, 2vw, 30px); }
+.testimonial-card {
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(26px, 2.4vw, 38px);
+  background: rgba(17,17,17,.035);
+  border: 0;
+  border-radius: 4px;
+  scroll-snap-align: start;
+}
+.testimonial-card blockquote {
+  margin: 0;
+  font-family: var(--cn);
+  font-size: clamp(16px, 1.15vw, 19px);
+  font-weight: 400;
+  line-height: 1.65;
+}
+.testimonial-card footer { margin-top: auto; padding-top: 54px; display: flex; flex-direction: column; gap: 6px; }
+.testimonial-card footer strong { font-size: 13px; font-weight: 500; }
+.testimonial-card footer span { color: var(--muted); font-size: 12px; line-height: 1.5; }
+
+.site-ending { padding-bottom: 54px; }
+
+/* Subpages inherit the homepage's hierarchy instead of maintaining a separate scale. */
+.page-eyebrow,
+.content-label,
+.article-no,
+.article-meta,
+.article-meta-line,
+.form-section h3 { font-size: 11px; }
+.page-title,
+.article-title-large { font-size: clamp(52px, 3.6vw, 72px); line-height: 1.08; }
+.page-intro,
+.article-dek { font-size: clamp(16px, 1vw, 18px); line-height: 1.7; max-width: 760px; }
+.content-body h2,
+.index-group-head h2,
+.article-body h2,
+.booking-copy h2 { font-size: clamp(36px, 2.65vw, 46px); line-height: 1.18; font-weight: 400; }
+.content-body h3 { font-size: 22px; line-height: 1.35; }
+.content-body p,
+.content-body li,
+.article-body p,
+.booking-copy p { font-size: 16px; line-height: 1.75; }
+.article-title { font-size: clamp(28px, 2.2vw, 38px); }
+.article-summary { font-size: 16px; line-height: 1.7; }
+.button { font-size: 14px; }
+.definition p { font-size: 14px; }
+.instrument-desc { font-size: 16px; }
+.disclosure-box { font-size: 15px; }
+.form-state,
+.article-toc,
+.article-nav small { font-size: 12px; }
+.field label { font-size: 13px; }
+
+@media (max-width: 1100px) {
+  .hero-source { height: 430px; right: 50%; top: 4%; transform: translateX(50%); animation: none; }
+  .misallocation .diagram-heading,
+  .frontier .diagram-heading,
+  .loop .diagram-heading { text-align: center; }
+  .misallocation .diagram-figure,
+  .frontier .diagram-figure,
+  .loop .diagram-figure { width: 80%; margin-inline: auto; }
+  .calculator-title-row,
+  .calculator-shell { width: 100%; }
+  .calculator-shell { grid-template-columns: 1fr; }
+  .testimonial-card { width: min(520px, 74vw); }
+}
+
+@media (max-width: 767px) {
+  .hero-source { height: 315px; right: 50%; top: 0; transform: translateX(50%); }
+  .misallocation .diagram-figure,
+  .frontier .diagram-figure,
+  .loop .diagram-figure { width: 100%; }
+  .calculator-controls { padding: 24px 22px 18px; }
+  .savings-panel { padding: 32px 24px 28px; }
+  .savings-amount { font-size: 58px; }
+  .testimonial-track { grid-template-columns: repeat(3, minmax(84vw, 84vw)); }
+  .testimonial-card { width: 84vw; min-height: 300px; }
+  .page-title,
+  .article-title-large { font-size: clamp(42px, 11vw, 54px); }
+  .content-body h2,
+  .index-group-head h2,
+  .article-body h2,
+  .booking-copy h2 { font-size: 34px; }
+  .site-ending { padding-bottom: 42px; }
+}

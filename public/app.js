@@ -281,7 +281,7 @@ function misallocationSvg() {
       <text x="1290" y="34" text-anchor="middle" stroke="none" class="axis-title">成本</text>
     </g>
     <text x="110" y="665" class="axis-footer">任务类型</text><text x="1024" y="665" class="axis-footer" text-anchor="middle">模型层级</text>
-    <text x="720" y="700" class="diagram-footnote" text-anchor="middle">大多数工作负载仍在固定使用强模型。</text>
+    <text x="720" y="700" class="diagram-footnote" text-anchor="middle">大多数工作负载仍在使用固定模型。</text>
   </svg>`;
 }
 function frontierSvg() {
@@ -306,7 +306,7 @@ function frontierSvg() {
       <text x="48" y="390" transform="rotate(-90 48 390)" class="axis-title">质量</text>
       <text x="1260" y="704" class="axis-title">成本</text><text x="1260" y="730" class="axis-sub">每个合格任务的成本</text>
     </g>
-    <text x="720" y="748" text-anchor="middle" class="diagram-footnote">保住结果，不要过度投入。</text>
+    <text x="720" y="748" text-anchor="middle" class="diagram-footnote">保证质量，追求 Token 调度的性价比。</text>
   </svg>`;
 }
 function capacityLoopSvg() {
@@ -319,10 +319,10 @@ function capacityLoopSvg() {
       <path class="route-path" d="M1170 214 C1170 380 1030 518 750 555 C485 590 255 535 220 415 C205 365 260 330 365 318 C430 310 505 288 525 220"/>
     </g>
     <g fill="currentColor">
-      <circle cx="220" cy="415" r="6"/><circle cx="390" cy="505" r="6"/><circle cx="620" cy="560" r="6"/><circle cx="855" cy="535" r="6"/><circle cx="1045" cy="455" r="6"/>
+      <circle cx="220" cy="415" r="6"/><circle cx="390" cy="541" r="6"/><circle cx="620" cy="560" r="6"/><circle cx="855" cy="535" r="6"/><circle cx="1045" cy="455" r="6"/>
     </g>
     <g class="diagram-labels">
-      <text x="220" y="448" text-anchor="middle">成本</text><text x="390" y="538" text-anchor="middle">质量</text><text x="620" y="596" text-anchor="middle">回退方案</text><text x="855" y="569" text-anchor="middle">接受率</text><text x="1045" y="489" text-anchor="middle">延迟</text>
+      <text x="220" y="448" text-anchor="middle">成本</text><text x="390" y="578" text-anchor="middle">质量</text><text x="620" y="596" text-anchor="middle">回退方案</text><text x="855" y="569" text-anchor="middle">接受率</text><text x="1045" y="489" text-anchor="middle">延迟</text>
       <text x="720" y="405" text-anchor="middle" class="loop-title">私有产能曲线</text>
     </g>
     <text x="720" y="675" text-anchor="middle" class="diagram-footnote">执行数据沉淀为更优的资源分配。</text>
@@ -334,12 +334,12 @@ function homeHtml() {
     <section class="screen hero" id="home"><div class="screen-inner hero-grid">
       <div class="hero-copy">
         <h1 class="hero-title"><span>释放每一滴</span><span class="token-line"><span class="latin">Token</span>的最大产能</span></h1>
-        <p class="hero-deck">AI 产能配置基础设施，帮助企业在同样预算下，完成更多高质量任务</p>
+        <p class="hero-deck">AI 产能配置引擎，帮助用户在同样预算下，完成更多高质量任务</p>
         <div class="hero-data">
           <div class="metric-grid">
-            <div class="metric"><div class="metric-label">已为开发者节省</div><div class="metric-value">¥ 8,426,300</div></div>
-            <div class="metric"><div class="metric-label">累计节省 <span class="latin">Token</span></div><div class="metric-value">1.28B</div></div>
-            <div class="metric"><div class="metric-label">任务效能利用率提升</div><div class="metric-value">29.4%</div></div>
+            <div class="metric"><div class="metric-label">已为开发者节省</div><div class="metric-value" id="live-savings">¥ 8,426,300</div></div>
+            <div class="metric"><div class="metric-label">累计节省 <span class="latin">Token</span></div><div class="metric-value" id="live-tokens">1.280B</div></div>
+            <div class="metric"><div class="metric-label">任务效能利用率提升</div><div class="metric-value" id="live-efficiency">29.4%</div></div>
           </div>
         </div>
       </div>
@@ -351,12 +351,12 @@ function homeHtml() {
     </div></div></section>
 
     <section class="screen diagram-screen misallocation"><div class="screen-inner">
-      <div class="reveal diagram-heading"><div class="section-kicker">1. AI 产能的错配</div><h2 class="section-title">大多数 AI 团队仍然把几乎所有任务<br>固定交给最强模型 ——<br>而不是交给性价比最高的模型。</h2></div>
+      <div class="reveal diagram-heading"><div class="section-kicker">1. AI 产能的错配</div><h2 class="section-title">加速从固定模型调用，到精细化配置 Token 的 AI 使用范式跃迁。</h2></div>
       ${diagramFrame(misallocationSvg(), '不同任务类型被集中导向最强模型，右侧成本向上，体现固定强模型造成的产能错配。')}
     </div></section>
 
     <section class="screen diagram-screen frontier"><div class="screen-inner">
-      <div class="reveal diagram-heading"><div class="section-kicker">2. 找到最低成本的合格路径</div><h2 class="section-title">同样的合格任务，<br>更低的成本。</h2></div>
+      <div class="reveal diagram-heading"><div class="section-kicker">2. 找到最低成本的合格路径</div><h2 class="section-title">同样的任务，以更低的成本完成。</h2></div>
       ${diagramFrame(frontierSvg(), '成本质量有效前沿：在合格输出标准下，清度路线以 1.0× 成本达到目标，最强模型对应 3.2× 成本。')}
     </div></section>
 
@@ -390,9 +390,9 @@ function homeHtml() {
     <section class="screen testimonials"><div class="screen-inner">
       <div class="testimonials-head"><div><div class="section-kicker testimonials-kicker">PRIVATE CAPACITY IN PRACTICE</div><h2 class="testimonials-title">来自真实使用场景的反馈</h2></div></div>
       <div class="testimonial-viewport" tabindex="0" role="region" aria-label="客户评价卡片，可横向滚动"><div class="testimonial-track">
-        <img class="testimonial-image" src="/assets/original/image7.png" alt="某企业 AI 应用公司技术负责人评价">
-        <img class="testimonial-image" src="/assets/original/image9.png" alt="某开发者工具团队研发负责人评价">
-        <img class="testimonial-image" src="/assets/original/image8.png" alt="某 AI 影像平台创始人评价">
+        <article class="testimonial-card"><blockquote>接入清度后，我们第一次知道，每一美元究竟买到了多少真正可用的 AI 产能。</blockquote><footer><strong>某伦敦对冲基金</strong><span>量化工程负责人</span></footer></article>
+        <article class="testimonial-card"><blockquote>清度把模型选择从一套静态规则，变成了能够根据真实任务结果持续学习的产能配置系统。</blockquote><footer><strong>某 AIGC 厂牌</strong><span>视频负责人</span></footer></article>
+        <article class="testimonial-card"><blockquote>清度帮助我们在不牺牲交付质量的情况下，把更多请求从昂贵模型迁移到更合适的路径。</blockquote><footer><strong>某具身智能公司</strong><span>创始人</span></footer></article>
       </div></div>
     </div></section>
 
@@ -407,8 +407,6 @@ function homeHtml() {
           <div><span class="ending-label">公司</span><a href="/book-demo/">联系我们</a><a href="/book-demo/">预约演示</a></div>
         </nav>
       </div>
-      <div class="ending-rule"></div>
-      <div class="ending-bottom"><span>© ${new Date().getFullYear()} 清度科技 / ACUindex</span><span>Public reference · Methodology driven</span></div>
     </div></footer>
   </main>`;
 }
@@ -495,6 +493,23 @@ function initCalculator() {
         structure = btn.dataset.value; update(); }));
     update();
 }
+function initLiveMetrics() {
+    const savings = document.querySelector('#live-savings');
+    const tokens = document.querySelector('#live-tokens');
+    const efficiency = document.querySelector('#live-efficiency');
+    if (!savings || !tokens || !efficiency || window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+        return;
+    let saved = 8426300, tokenTotal = 1.280, tick = 0;
+    window.setInterval(() => {
+        tick += 1;
+        saved += 17 + (tick % 5) * 6;
+        tokenTotal += .001;
+        savings.textContent = `¥ ${saved.toLocaleString('en-US')}`;
+        tokens.textContent = `${tokenTotal.toFixed(3)}B`;
+        efficiency.textContent = `${(29.4 + (tick % 3) * .1).toFixed(1)}%`;
+        [savings, tokens, efficiency].forEach(el => { el.classList.remove('is-updating'); void el.offsetWidth; el.classList.add('is-updating'); });
+    }, 3200);
+}
 function initTestimonials() {
     const el = document.querySelector('.testimonial-viewport');
     if (!el)
@@ -576,6 +591,7 @@ function render() {
     initHeader();
     initReveal();
     initCalculator();
+    initLiveMetrics();
     initTestimonials();
     initBooking();
 }
