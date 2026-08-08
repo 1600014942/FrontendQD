@@ -32,7 +32,7 @@ img { max-width: 100%; display: block; }
 .site-header.scrolled { background: var(--paper); border-bottom-color: var(--line); height: 76px; }
 .header-inner { width: min(var(--max), calc(100% - var(--gutter) - var(--gutter))); height: 100%; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 40px; }
 .brand-lockup { display: inline-flex; align-items: center; gap: 18px; white-space: nowrap; font-family: var(--serif); font-size: 29px; }
-.brand-box { border: 1px solid var(--ink); padding: 8px 14px 6px; font-family: var(--din); font-size: 27px; line-height: 1; letter-spacing: -.02em; }
+.brand-box { border: 0; padding: 0; font-family: var(--din); font-size: 27px; line-height: 1; letter-spacing: -.02em; }
 .main-nav { display: flex; align-items: center; gap: 44px; font-size: 16px; }
 .main-nav a { position: relative; padding: 8px 0; }
 .main-nav a:not(.contact-button)::after { content: ""; position: absolute; left: 0; right: 100%; bottom: 1px; height: 1px; background: var(--ink); transition: right .25s; }
