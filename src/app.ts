@@ -359,7 +359,24 @@ function homeHtml(): string {
           <div class="hero-live-note"><span class="hero-live-dot" aria-hidden="true"></span><span>实时更新</span></div>
         </div>
       </div>
-      <div class="hero-visual" aria-label="清度原始流线场球体主视觉"><img class="hero-source" src="/assets/figures/hero-ball-transparent.png" alt="由细密流线构成的黑白椭圆球体，清度科技原始主视觉"></div>
+      <div class="hero-visual" aria-label="清度原始流线场球体主视觉">
+        <img class="hero-source" src="/assets/figures/hero-ball-transparent.png" alt="由细密流线构成的黑白球体，清度科技原始主视觉">
+        <svg class="hero-flow" viewBox="0 0 1000 1000" aria-hidden="true">
+          <defs><clipPath id="hero-flow-clip"><circle cx="500" cy="500" r="424"/></clipPath></defs>
+          <g clip-path="url(#hero-flow-clip)" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round">
+            <path class="hero-flow-path flow-a" d="M122 492 C250 270 566 204 860 434"/>
+            <path class="hero-flow-path flow-b" d="M146 613 C350 410 644 352 874 535"/>
+            <path class="hero-flow-path flow-c" d="M238 772 C355 540 642 442 816 271"/>
+            <path class="hero-flow-path flow-d" d="M282 202 C407 391 597 612 779 758"/>
+            <path class="hero-flow-path flow-e" d="M182 364 C410 500 611 705 852 648"/>
+          </g>
+          <g class="hero-flow-nodes">
+            <circle class="hero-flow-node node-a" cx="286" cy="326" r="5"/><circle class="hero-flow-node node-b" cx="526" cy="260" r="4"/><circle class="hero-flow-node node-c" cx="748" cy="350" r="5"/>
+            <circle class="hero-flow-node node-d" cx="342" cy="528" r="4"/><circle class="hero-flow-node node-e" cx="570" cy="455" r="5"/><circle class="hero-flow-node node-f" cx="773" cy="555" r="4"/>
+            <circle class="hero-flow-node node-g" cx="411" cy="660" r="5"/><circle class="hero-flow-node node-h" cx="642" cy="694" r="4"/>
+          </g>
+        </svg>
+      </div>
     </div></section>
 
     <section class="screen ecosystem"><div class="screen-inner"><div class="reveal">
