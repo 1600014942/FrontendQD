@@ -2,9 +2,9 @@
 
 ## 字体
 
-- 中文界面、标题与正文：`PingFang SC` 优先，依次回退至 `PingFang TC`、`Hiragino Sans GB`、`Noto Sans CJK SC`、`Microsoft YaHei`。
+- 中文界面与正文：`PingFang SC` 优先，依次回退至 `PingFang TC`、`Hiragino Sans GB`、`Microsoft YaHei`。
 - 英文、数字、标签：`DIN Alternate` 优先，依次回退至 `DIN Condensed`、`Arial Narrow`。
-- 全站不使用楷体、宋体或其他中文衬线字体；不打包或分发字体文件。
+- 首页和编辑页极少数大标题沿用原型中的中文衬线气质，使用系统 `Songti SC / STSong / SimSun`，不打包或分发字体文件。
 
 ## 色彩
 
@@ -13,7 +13,7 @@
 - 主文字：`#111111`；
 - 次级文字：`#6D6D69`；
 - 边框：`rgba(17,17,17,0.13)`；
-- 全站维持黑、白、灰，不增加额外品牌色。
+- 唯一轻微状态色：Demo 状态点使用低饱和灰紫。
 
 ## 尺度
 
