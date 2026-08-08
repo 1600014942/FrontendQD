@@ -19,7 +19,7 @@
       icon.rel = 'icon'; icon.type = 'image/svg+xml'; icon.href = `${base}/favicon.svg`;
       document.head.appendChild(icon);
       const css = document.createElement('link');
-      css.rel = 'stylesheet'; css.href = `${base}/styles.css`;
+      css.rel = 'stylesheet'; css.href = `${base}/styles.css?v=1f1be7f`;
       document.head.appendChild(css);
     })();
   </script>
@@ -32,7 +32,7 @@
     (() => {
       const base = location.pathname === '/acu/index' || location.pathname.startsWith('/acu/index/') ? '/acu/index' : '';
       const script = document.createElement('script');
-      script.src = `${base}/app.js`;
+      script.src = `${base}/app.js?v=326fa67`;
       document.body.appendChild(script);
     })();
   </script>
