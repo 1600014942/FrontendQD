@@ -1,6 +1,28 @@
 type ArticleSection = { id: string; title: string; paragraphs: string[]; quote?: string };
 type Article = { slug: string; title: string; summary: string; date: string; category: string; dek: string; sections: ArticleSection[] };
 
+const deploymentBase = (): string => {
+  const pathname = window.location.pathname;
+  return pathname === '/acu/index' || pathname.startsWith('/acu/index/') ? '/acu/index' : '';
+};
+
+const deploymentPath = (): string => {
+  const base = deploymentBase();
+  const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
+  return base && pathname.startsWith(base) ? (pathname.slice(base.length) || '/') : pathname;
+};
+
+function prefixLocalUrls(root: HTMLElement): void {
+  const base = deploymentBase();
+  if (!base) return;
+  root.querySelectorAll<HTMLElement>('[href], [src]').forEach((element) => {
+    for (const attr of ['href', 'src']) {
+      const value = element.getAttribute(attr);
+      if (value?.startsWith('/') && !value.startsWith('//') && !value.startsWith(base)) element.setAttribute(attr, `${base}${value}`);
+    }
+  });
+}
+
 const articles: Article[] = [
   {
     slug: 'token-is-not-capacity', title: '为什么 Token 不是 AI 产能', category: '基础概念', date: '2026.08.07',
@@ -485,14 +507,14 @@ function initTestimonials(): void {
 function initBooking(): void {
   const form=document.querySelector<HTMLFormElement>('#booking-form'); if(!form)return; const error=document.querySelector<HTMLElement>('.form-error')!; const success=document.querySelector<HTMLElement>('.form-success')!; const submit=form.querySelector<HTMLButtonElement>('button[type="submit"]')!; let ics=''; let bookingId='';
   form.addEventListener('submit',async e=>{e.preventDefault(); if(!form.reportValidity())return; submit.disabled=true;submit.textContent='提交中…';error.hidden=true;success.hidden=true;
-    try{const data=Object.fromEntries(new FormData(form).entries());const res=await fetch('/api/book-demo',{method:'POST',headers:{'Content-Type':'application/json','Idempotency-Key':crypto.randomUUID()},body:JSON.stringify(data)});const body=await res.json();if(!res.ok||!body.ok)throw new Error(body.error||'提交失败');ics=body.ics||'';bookingId=body.bookingId;success.hidden=false;success.querySelector('.success-message')!.textContent=body.emailStatus==='not_configured'?'开发环境回退：表单已通过服务端校验，但邮件服务未配置，邮件没有发送。':'预约提交成功，团队与预约邮箱均已收到确认邮件。';success.querySelector('.success-id')!.textContent=`预约编号：${bookingId}`;const dl=success.querySelector<HTMLButtonElement>('.download-ics')!;dl.hidden=!ics;form.reset();}catch(err){error.hidden=false;error.textContent=err instanceof Error?err.message:'提交失败，请稍后重试。';}finally{submit.disabled=false;submit.textContent='提交预约';}
+    try{const data=Object.fromEntries(new FormData(form).entries());const res=await fetch(`${deploymentBase()}/api/book-demo`,{method:'POST',headers:{'Content-Type':'application/json','Idempotency-Key':crypto.randomUUID()},body:JSON.stringify(data)});const body=await res.json();if(!res.ok||!body.ok)throw new Error(body.error||'提交失败');ics=body.ics||'';bookingId=body.bookingId;success.hidden=false;success.querySelector('.success-message')!.textContent=body.emailStatus==='not_configured'?'开发环境回退：表单已通过服务端校验，但邮件服务未配置，邮件没有发送。':'预约提交成功，团队与预约邮箱均已收到确认邮件。';success.querySelector('.success-id')!.textContent=`预约编号：${bookingId}`;const dl=success.querySelector<HTMLButtonElement>('.download-ics')!;dl.hidden=!ics;form.reset();}catch(err){error.hidden=false;error.textContent=err instanceof Error?err.message:'提交失败，请稍后重试。';}finally{submit.disabled=false;submit.textContent='提交预约';}
   });
   success.querySelector<HTMLButtonElement>('.download-ics')?.addEventListener('click',()=>{if(!ics)return;const blob=new Blob([ics],{type:'text/calendar;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=`qingdu-demo-${bookingId}.ics`;a.click();URL.revokeObjectURL(url);});
 }
 
 function render(): void {
   const root=document.getElementById('root')!;
-  const path=(window.location.pathname.replace(/\/+$/,'')||'/');
+  const path=deploymentPath();
   let body='';
   if(path==='/') body=homeHtml();
   else if(path==='/acu-index') body=acuIndexHtml();
@@ -500,6 +522,7 @@ function render(): void {
   else if(path==='/book-demo') body=bookDemoHtml();
   else { const match=path.match(/^\/articles\/([^/]+)$/); const article=match?articles.find(a=>a.slug===match[1]):undefined; body=article?articleHtml(article):`<main class="error-page" id="main"><h1>页面不存在</h1><a class="button button-dark" href="/">返回首页</a></main>`; }
   root.innerHTML=headerHtml(path)+body+(path==='/'?'':footerHtml());
+  prefixLocalUrls(root);
   initHeader();initReveal();initCalculator();initTestimonials();initBooking();
 }
 

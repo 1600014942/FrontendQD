@@ -1,4 +1,25 @@
 "use strict";
+const deploymentBase = () => {
+    const pathname = window.location.pathname;
+    return pathname === '/acu/index' || pathname.startsWith('/acu/index/') ? '/acu/index' : '';
+};
+const deploymentPath = () => {
+    const base = deploymentBase();
+    const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
+    return base && pathname.startsWith(base) ? (pathname.slice(base.length) || '/') : pathname;
+};
+function prefixLocalUrls(root) {
+    const base = deploymentBase();
+    if (!base)
+        return;
+    root.querySelectorAll('[href], [src]').forEach((element) => {
+        for (const attr of ['href', 'src']) {
+            const value = element.getAttribute(attr);
+            if (value?.startsWith('/') && !value.startsWith('//') && !value.startsWith(base))
+                element.setAttribute(attr, `${base}${value}`);
+        }
+    });
+}
 const articles = [
     {
         slug: 'token-is-not-capacity', title: '为什么 Token 不是 AI 产能', category: '基础概念', date: '2026.08.07',
@@ -508,7 +529,7 @@ function initBooking() {
         success.hidden = true;
         try {
             const data = Object.fromEntries(new FormData(form).entries());
-            const res = await fetch('/api/book-demo', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Idempotency-Key': crypto.randomUUID() }, body: JSON.stringify(data) });
+            const res = await fetch(`${deploymentBase()}/api/book-demo`, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Idempotency-Key': crypto.randomUUID() }, body: JSON.stringify(data) });
             const body = await res.json();
             if (!res.ok || !body.ok)
                 throw new Error(body.error || '提交失败');
@@ -535,7 +556,7 @@ function initBooking() {
 }
 function render() {
     const root = document.getElementById('root');
-    const path = (window.location.pathname.replace(/\/+$/, '') || '/');
+    const path = deploymentPath();
     let body = '';
     if (path === '/')
         body = homeHtml();
@@ -551,6 +572,7 @@ function render() {
         body = article ? articleHtml(article) : `<main class="error-page" id="main"><h1>页面不存在</h1><a class="button button-dark" href="/">返回首页</a></main>`;
     }
     root.innerHTML = headerHtml(path) + body + (path === '/' ? '' : footerHtml());
+    prefixLocalUrls(root);
     initHeader();
     initReveal();
     initCalculator();

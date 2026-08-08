@@ -12,13 +12,29 @@
   <meta property="og:image" content="https://acuindex.cn/og.svg" />
   <meta property="og:locale" content="zh_CN" />
   <meta name="theme-color" content="#f7f6f2" />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="/styles.css" />
+  <script>
+    (() => {
+      const base = location.pathname === '/acu/index' || location.pathname.startsWith('/acu/index/') ? '/acu/index' : '';
+      const icon = document.createElement('link');
+      icon.rel = 'icon'; icon.type = 'image/svg+xml'; icon.href = `${base}/favicon.svg`;
+      document.head.appendChild(icon);
+      const css = document.createElement('link');
+      css.rel = 'stylesheet'; css.href = `${base}/styles.css`;
+      document.head.appendChild(css);
+    })();
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">跳到主要内容</a>
   <div id="root"></div>
   <noscript>本网站需要 JavaScript 以运行交互式测算器和预约表单。</noscript>
-  <script src="/app.js"></script>
+  <script>
+    (() => {
+      const base = location.pathname === '/acu/index' || location.pathname.startsWith('/acu/index/') ? '/acu/index' : '';
+      const script = document.createElement('script');
+      script.src = `${base}/app.js`;
+      document.body.appendChild(script);
+    })();
+  </script>
 </body>
 </html>
