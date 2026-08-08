@@ -1,0 +1,99 @@
+{
+  "viewport": [
+    1920,
+    1080
+  ],
+  "body": [
+    1920,
+    8493
+  ],
+  "sections": {
+    "hero": {
+      "height": 1080,
+      "top": 0
+    },
+    "logo": {
+      "height": 993.59375,
+      "top": 1080
+    },
+    "misallocation": {
+      "height": 1117.546875,
+      "top": 2073.59375
+    },
+    "frontier": {
+      "height": 1066.359375,
+      "top": 3191.140625
+    },
+    "loop": {
+      "height": 1015.265625,
+      "top": 4257.5
+    },
+    "calculator": {
+      "height": 993.59375,
+      "top": 5272.765625
+    },
+    "testimonials": {
+      "height": 972,
+      "top": 6266.359375
+    },
+    "cta": {
+      "height": 928.796875,
+      "top": 7238.359375
+    },
+    "footer": {
+      "height": 326,
+      "top": 8167.15625
+    }
+  },
+  "containers": {
+    "header": {
+      "left": 120,
+      "width": 1680,
+      "right": 1800
+    },
+    "screen": {
+      "left": 120,
+      "width": 1680,
+      "right": 1800
+    },
+    "ending": {
+      "left": 120,
+      "width": 1680,
+      "right": 1800
+    }
+  },
+  "fonts": {
+    ".hero-title": {
+      "fontSize": "99.84px",
+      "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif"
+    },
+    ".misallocation .section-title": {
+      "fontSize": "68px",
+      "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif"
+    },
+    ".frontier .section-title": {
+      "fontSize": "68px",
+      "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif"
+    },
+    ".loop .section-title": {
+      "fontSize": "68px",
+      "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif"
+    },
+    ".calculator-section .section-title": {
+      "fontSize": "76px",
+      "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif"
+    },
+    ".testimonials-title": {
+      "fontSize": "70px",
+      "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif"
+    },
+    ".final-title": {
+      "fontSize": "84px",
+      "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif"
+    }
+  },
+  "assetSrc": {
+    "hero": "data:image/png;base64,iV",
+    "logo": "data:image/png;base64,iV"
+  }
+}

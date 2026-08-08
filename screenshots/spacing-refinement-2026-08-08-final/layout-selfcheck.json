@@ -1,0 +1,642 @@
+{
+  "390": {
+    "viewport": [
+      390,
+      844
+    ],
+    "body": [
+      390,
+      7154
+    ],
+    "overflowX": 0,
+    "containers": {
+      "header": {
+        "left": 18,
+        "top": 0,
+        "width": 354,
+        "height": 67,
+        "right": 372
+      },
+      "screen": {
+        "left": 18,
+        "top": 68,
+        "width": 354,
+        "height": 820,
+        "right": 372
+      },
+      "ending": {
+        "left": 18,
+        "top": 6639.91,
+        "width": 354,
+        "height": 488.39,
+        "right": 372
+      }
+    },
+    "sections": {
+      "hero": {
+        "left": 0,
+        "top": 0,
+        "width": 390,
+        "height": 944,
+        "right": 390
+      },
+      "logo": {
+        "left": 0,
+        "top": 944,
+        "width": 390,
+        "height": 475.27,
+        "right": 390
+      },
+      "misallocation": {
+        "left": 0,
+        "top": 1419.27,
+        "width": 390,
+        "height": 964.25,
+        "right": 390
+      },
+      "frontier": {
+        "left": 0,
+        "top": 2383.52,
+        "width": 390,
+        "height": 774.3,
+        "right": 390
+      },
+      "loop": {
+        "left": 0,
+        "top": 3157.81,
+        "width": 390,
+        "height": 880.63,
+        "right": 390
+      },
+      "calculator": {
+        "left": 0,
+        "top": 4038.44,
+        "width": 390,
+        "height": 1615.08,
+        "right": 390
+      },
+      "testimonials": {
+        "left": 0,
+        "top": 5653.52,
+        "width": 390,
+        "height": 471.52,
+        "right": 390
+      },
+      "cta": {
+        "left": 0,
+        "top": 6125.03,
+        "width": 390,
+        "height": 457.88,
+        "right": 390
+      },
+      "footer": {
+        "left": 0,
+        "top": 6582.91,
+        "width": 390,
+        "height": 571.39,
+        "right": 390
+      }
+    },
+    "fonts": {
+      "hero": {
+        "fontSize": "46.8px",
+        "lineHeight": "48.672px",
+        "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif"
+      },
+      "section": {
+        "fontSize": "42px",
+        "lineHeight": "47.88px",
+        "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif"
+      },
+      "calculator": {
+        "fontSize": "42px",
+        "lineHeight": "44.52px",
+        "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif"
+      },
+      "testimonials": {
+        "fontSize": "46px",
+        "lineHeight": "52.44px",
+        "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif"
+      },
+      "cta": {
+        "fontSize": "48px",
+        "lineHeight": "56.64px",
+        "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif"
+      }
+    },
+    "testimonialImages": 3,
+    "diagramSvgs": 3
+  },
+  "768": {
+    "viewport": [
+      768,
+      1080
+    ],
+    "body": [
+      768,
+      7294
+    ],
+    "overflowX": 0,
+    "containers": {
+      "header": {
+        "left": 28,
+        "top": 0,
+        "width": 712,
+        "height": 77,
+        "right": 740
+      },
+      "screen": {
+        "left": 28,
+        "top": 104,
+        "width": 712,
+        "height": 960,
+        "right": 740
+      },
+      "ending": {
+        "left": 28,
+        "top": 6917,
+        "width": 712,
+        "height": 351.39,
+        "right": 740
+      }
+    },
+    "sections": {
+      "hero": {
+        "left": 0,
+        "top": 0,
+        "width": 768,
+        "height": 1136,
+        "right": 768
+      },
+      "logo": {
+        "left": 0,
+        "top": 1136,
+        "width": 768,
+        "height": 438.06,
+        "right": 768
+      },
+      "misallocation": {
+        "left": 0,
+        "top": 1574.06,
+        "width": 768,
+        "height": 955.75,
+        "right": 768
+      },
+      "frontier": {
+        "left": 0,
+        "top": 2529.81,
+        "width": 768,
+        "height": 859.75,
+        "right": 768
+      },
+      "loop": {
+        "left": 0,
+        "top": 3389.56,
+        "width": 768,
+        "height": 888.63,
+        "right": 768
+      },
+      "calculator": {
+        "left": 0,
+        "top": 4278.19,
+        "width": 768,
+        "height": 1488.06,
+        "right": 768
+      },
+      "testimonials": {
+        "left": 0,
+        "top": 5766.25,
+        "width": 768,
+        "height": 605.03,
+        "right": 768
+      },
+      "cta": {
+        "left": 0,
+        "top": 6371.28,
+        "width": 768,
+        "height": 488.72,
+        "right": 768
+      },
+      "footer": {
+        "left": 0,
+        "top": 6860,
+        "width": 768,
+        "height": 434.39,
+        "right": 768
+      }
+    },
+    "fonts": {
+      "hero": {
+        "fontSize": "76.8px",
+        "lineHeight": "76.032px",
+        "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif"
+      },
+      "section": {
+        "fontSize": "46px",
+        "lineHeight": "52.44px",
+        "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif"
+      },
+      "calculator": {
+        "fontSize": "50px",
+        "lineHeight": "53px",
+        "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif"
+      },
+      "testimonials": {
+        "fontSize": "46px",
+        "lineHeight": "52.44px",
+        "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif"
+      },
+      "cta": {
+        "fontSize": "52px",
+        "lineHeight": "61.36px",
+        "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif"
+      }
+    },
+    "testimonialImages": 3,
+    "diagramSvgs": 3
+  },
+  "1024": {
+    "viewport": [
+      1024,
+      1080
+    ],
+    "body": [
+      1024,
+      7309
+    ],
+    "overflowX": 0,
+    "containers": {
+      "header": {
+        "left": 28,
+        "top": 0,
+        "width": 968,
+        "height": 77,
+        "right": 996
+      },
+      "screen": {
+        "left": 28,
+        "top": 104,
+        "width": 968,
+        "height": 960,
+        "right": 996
+      },
+      "ending": {
+        "left": 28,
+        "top": 6931.72,
+        "width": 968,
+        "height": 351.39,
+        "right": 996
+      }
+    },
+    "sections": {
+      "hero": {
+        "left": 0,
+        "top": 0,
+        "width": 1024,
+        "height": 1136,
+        "right": 1024
+      },
+      "logo": {
+        "left": 0,
+        "top": 1136,
+        "width": 1024,
+        "height": 532.3,
+        "right": 1024
+      },
+      "misallocation": {
+        "left": 0,
+        "top": 1668.3,
+        "width": 1024,
+        "height": 903.31,
+        "right": 1024
+      },
+      "frontier": {
+        "left": 0,
+        "top": 2571.61,
+        "width": 1024,
+        "height": 859.75,
+        "right": 1024
+      },
+      "loop": {
+        "left": 0,
+        "top": 3431.36,
+        "width": 1024,
+        "height": 836.19,
+        "right": 1024
+      },
+      "calculator": {
+        "left": 0,
+        "top": 4267.55,
+        "width": 1024,
+        "height": 1488.06,
+        "right": 1024
+      },
+      "testimonials": {
+        "left": 0,
+        "top": 5755.61,
+        "width": 1024,
+        "height": 630.39,
+        "right": 1024
+      },
+      "cta": {
+        "left": 0,
+        "top": 6386,
+        "width": 1024,
+        "height": 488.72,
+        "right": 1024
+      },
+      "footer": {
+        "left": 0,
+        "top": 6874.72,
+        "width": 1024,
+        "height": 434.39,
+        "right": 1024
+      }
+    },
+    "fonts": {
+      "hero": {
+        "fontSize": "100px",
+        "lineHeight": "99px",
+        "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif"
+      },
+      "section": {
+        "fontSize": "46px",
+        "lineHeight": "52.44px",
+        "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif"
+      },
+      "calculator": {
+        "fontSize": "50px",
+        "lineHeight": "53px",
+        "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif"
+      },
+      "testimonials": {
+        "fontSize": "46px",
+        "lineHeight": "52.44px",
+        "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif"
+      },
+      "cta": {
+        "fontSize": "52px",
+        "lineHeight": "61.36px",
+        "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif"
+      }
+    },
+    "testimonialImages": 3,
+    "diagramSvgs": 3
+  },
+  "1440": {
+    "viewport": [
+      1440,
+      1080
+    ],
+    "body": [
+      1440,
+      8197
+    ],
+    "overflowX": 0,
+    "containers": {
+      "header": {
+        "left": 72,
+        "top": 0,
+        "width": 1296,
+        "height": 93,
+        "right": 1368
+      },
+      "screen": {
+        "left": 72,
+        "top": 94,
+        "width": 1296,
+        "height": 914,
+        "right": 1368
+      },
+      "ending": {
+        "left": 72,
+        "top": 7937.02,
+        "width": 1296,
+        "height": 234,
+        "right": 1368
+      }
+    },
+    "sections": {
+      "hero": {
+        "left": 0,
+        "top": 0,
+        "width": 1440,
+        "height": 1080,
+        "right": 1440
+      },
+      "logo": {
+        "left": 0,
+        "top": 1080,
+        "width": 1440,
+        "height": 993.59,
+        "right": 1440
+      },
+      "misallocation": {
+        "left": 0,
+        "top": 2073.59,
+        "width": 1440,
+        "height": 1032.84,
+        "right": 1440
+      },
+      "frontier": {
+        "left": 0,
+        "top": 3106.44,
+        "width": 1440,
+        "height": 993.59,
+        "right": 1440
+      },
+      "loop": {
+        "left": 0,
+        "top": 4100.03,
+        "width": 1440,
+        "height": 993.59,
+        "right": 1440
+      },
+      "calculator": {
+        "left": 0,
+        "top": 5093.63,
+        "width": 1440,
+        "height": 993.59,
+        "right": 1440
+      },
+      "testimonials": {
+        "left": 0,
+        "top": 6087.22,
+        "width": 1440,
+        "height": 972,
+        "right": 1440
+      },
+      "cta": {
+        "left": 0,
+        "top": 7059.22,
+        "width": 1440,
+        "height": 820.8,
+        "right": 1440
+      },
+      "footer": {
+        "left": 0,
+        "top": 7880.02,
+        "width": 1440,
+        "height": 317,
+        "right": 1440
+      }
+    },
+    "fonts": {
+      "hero": {
+        "fontSize": "74.88px",
+        "lineHeight": "74.1312px",
+        "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif"
+      },
+      "section": {
+        "fontSize": "51.12px",
+        "lineHeight": "58.2768px",
+        "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif"
+      },
+      "calculator": {
+        "fontSize": "57.6px",
+        "lineHeight": "61.056px",
+        "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif"
+      },
+      "testimonials": {
+        "fontSize": "53.28px",
+        "lineHeight": "60.7392px",
+        "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif"
+      },
+      "cta": {
+        "fontSize": "63.36px",
+        "lineHeight": "74.7648px",
+        "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif"
+      }
+    },
+    "testimonialImages": 3,
+    "diagramSvgs": 3
+  },
+  "1920": {
+    "viewport": [
+      1920,
+      1080
+    ],
+    "body": [
+      1920,
+      8863
+    ],
+    "overflowX": 0,
+    "containers": {
+      "header": {
+        "left": 120,
+        "top": 0,
+        "width": 1680,
+        "height": 93,
+        "right": 1800
+      },
+      "screen": {
+        "left": 120,
+        "top": 94,
+        "width": 1680,
+        "height": 914,
+        "right": 1800
+      },
+      "ending": {
+        "left": 120,
+        "top": 8603.48,
+        "width": 1680,
+        "height": 234,
+        "right": 1800
+      }
+    },
+    "sections": {
+      "hero": {
+        "left": 0,
+        "top": 0,
+        "width": 1920,
+        "height": 1080,
+        "right": 1920
+      },
+      "logo": {
+        "left": 0,
+        "top": 1080,
+        "width": 1920,
+        "height": 993.59,
+        "right": 1920
+      },
+      "misallocation": {
+        "left": 0,
+        "top": 2073.59,
+        "width": 1920,
+        "height": 1282.55,
+        "right": 1920
+      },
+      "frontier": {
+        "left": 0,
+        "top": 3356.14,
+        "width": 1920,
+        "height": 1231.69,
+        "right": 1920
+      },
+      "loop": {
+        "left": 0,
+        "top": 4587.83,
+        "width": 1920,
+        "height": 1172.27,
+        "right": 1920
+      },
+      "calculator": {
+        "left": 0,
+        "top": 5760.09,
+        "width": 1920,
+        "height": 993.59,
+        "right": 1920
+      },
+      "testimonials": {
+        "left": 0,
+        "top": 6753.69,
+        "width": 1920,
+        "height": 972,
+        "right": 1920
+      },
+      "cta": {
+        "left": 0,
+        "top": 7725.69,
+        "width": 1920,
+        "height": 820.8,
+        "right": 1920
+      },
+      "footer": {
+        "left": 0,
+        "top": 8546.48,
+        "width": 1920,
+        "height": 317,
+        "right": 1920
+      }
+    },
+    "fonts": {
+      "hero": {
+        "fontSize": "99.84px",
+        "lineHeight": "98.8416px",
+        "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif"
+      },
+      "section": {
+        "fontSize": "68px",
+        "lineHeight": "77.52px",
+        "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif"
+      },
+      "calculator": {
+        "fontSize": "76px",
+        "lineHeight": "80.56px",
+        "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif"
+      },
+      "testimonials": {
+        "fontSize": "70px",
+        "lineHeight": "79.8px",
+        "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif"
+      },
+      "cta": {
+        "fontSize": "84px",
+        "lineHeight": "99.12px",
+        "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif"
+      }
+    },
+    "testimonialImages": 3,
+    "diagramSvgs": 3
+  }
+}

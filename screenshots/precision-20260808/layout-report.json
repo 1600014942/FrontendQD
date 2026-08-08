@@ -1,0 +1,245 @@
+{
+  "390": {
+    "docW": 390,
+    "clientW": 390,
+    "docH": 7083,
+    "ball": {
+      "x": 36,
+      "y": 518,
+      "w": 318,
+      "h": 315,
+      "scrollH": 315,
+      "clientH": 315
+    },
+    "problem": {
+      "x": 18,
+      "y": 1737,
+      "w": 354,
+      "h": 470,
+      "scrollH": 470,
+      "clientH": 470
+    },
+    "frontier": {
+      "x": 18,
+      "y": 2524,
+      "w": 354,
+      "h": 496,
+      "scrollH": 496,
+      "clientH": 496
+    },
+    "loop": {
+      "x": 18,
+      "y": 3419,
+      "w": 354,
+      "h": 470,
+      "scrollH": 470,
+      "clientH": 470
+    },
+    "calculator": {
+      "x": 18,
+      "y": 4244,
+      "w": 354,
+      "h": 1078,
+      "scrollH": 1076,
+      "clientH": 1076
+    },
+    "controls": {
+      "x": 19,
+      "y": 4245,
+      "w": 352,
+      "h": 514,
+      "scrollH": 514,
+      "clientH": 514
+    },
+    "results": {
+      "x": 19,
+      "y": 4759,
+      "w": 352,
+      "h": 562,
+      "scrollH": 562,
+      "clientH": 562
+    },
+    "calcColumns": "352px",
+    "testimonials": {
+      "x": 18,
+      "y": 5646,
+      "w": 1019,
+      "h": 300,
+      "scrollH": 300,
+      "clientH": 300
+    },
+    "footer": {
+      "x": 0,
+      "y": 6603,
+      "w": 390,
+      "h": 480,
+      "scrollH": 479,
+      "clientH": 479
+    },
+    "clipped": [],
+    "footerBottom": false,
+    "quality": "541"
+  },
+  "1024": {
+    "docW": 1024,
+    "clientW": 1024,
+    "docH": 7119,
+    "ball": {
+      "x": 295,
+      "y": 574,
+      "w": 434,
+      "h": 430,
+      "scrollH": 430,
+      "clientH": 430
+    },
+    "problem": {
+      "x": 141,
+      "y": 1856,
+      "w": 742,
+      "h": 520,
+      "scrollH": 520,
+      "clientH": 520
+    },
+    "frontier": {
+      "x": 141,
+      "y": 2667,
+      "w": 742,
+      "h": 549,
+      "scrollH": 549,
+      "clientH": 549
+    },
+    "loop": {
+      "x": 141,
+      "y": 3559,
+      "w": 742,
+      "h": 520,
+      "scrollH": 520,
+      "clientH": 520
+    },
+    "calculator": {
+      "x": 48,
+      "y": 4435,
+      "w": 928,
+      "h": 999,
+      "scrollH": 997,
+      "clientH": 997
+    },
+    "controls": {
+      "x": 49,
+      "y": 4436,
+      "w": 926,
+      "h": 474,
+      "scrollH": 474,
+      "clientH": 474
+    },
+    "results": {
+      "x": 49,
+      "y": 4910,
+      "w": 926,
+      "h": 523,
+      "scrollH": 523,
+      "clientH": 523
+    },
+    "calcColumns": "926px",
+    "testimonials": {
+      "x": 48,
+      "y": 5728,
+      "w": 1601,
+      "h": 320,
+      "scrollH": 320,
+      "clientH": 320
+    },
+    "footer": {
+      "x": 0,
+      "y": 6745,
+      "w": 1024,
+      "h": 373,
+      "scrollH": 372,
+      "clientH": 372
+    },
+    "clipped": [],
+    "footerBottom": false,
+    "quality": "541"
+  },
+  "1440": {
+    "docW": 1440,
+    "clientW": 1440,
+    "docH": 6483,
+    "ball": {
+      "x": 724,
+      "y": 145,
+      "w": 626,
+      "h": 620,
+      "scrollH": 620,
+      "clientH": 620
+    },
+    "problem": {
+      "x": 285,
+      "y": 1794,
+      "w": 870,
+      "h": 435,
+      "scrollH": 435,
+      "clientH": 435
+    },
+    "frontier": {
+      "x": 285,
+      "y": 2581,
+      "w": 870,
+      "h": 459,
+      "scrollH": 459,
+      "clientH": 459
+    },
+    "loop": {
+      "x": 209,
+      "y": 3445,
+      "w": 1023,
+      "h": 511,
+      "scrollH": 511,
+      "clientH": 511
+    },
+    "calculator": {
+      "x": 196,
+      "y": 4306,
+      "w": 1048,
+      "h": 531,
+      "scrollH": 529,
+      "clientH": 529
+    },
+    "controls": {
+      "x": 197,
+      "y": 4307,
+      "w": 502,
+      "h": 529,
+      "scrollH": 529,
+      "clientH": 529
+    },
+    "results": {
+      "x": 699,
+      "y": 4307,
+      "w": 544,
+      "h": 529,
+      "scrollH": 529,
+      "clientH": 529
+    },
+    "calcColumns": "502.219px 544.078px",
+    "testimonials": {
+      "x": 65,
+      "y": 5178,
+      "w": 1310,
+      "h": 320,
+      "scrollH": 320,
+      "clientH": 320
+    },
+    "footer": {
+      "x": 0,
+      "y": 6227,
+      "w": 1440,
+      "h": 256,
+      "scrollH": 255,
+      "clientH": 255
+    },
+    "clipped": [],
+    "footerBottom": false,
+    "quality": "541"
+  }
+}

@@ -1,0 +1,198 @@
+{
+  "hero_title": {
+    "selector": ".hero-title",
+    "computed": {
+      "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+      "fontStyle": "normal",
+      "fontWeight": "400"
+    },
+    "platform_fonts": [
+      {
+        "familyName": "Noto Sans CJK SC",
+        "postScriptName": "NotoSansCJKsc-Regular",
+        "isCustomFont": false,
+        "glyphCount": 10
+      }
+    ],
+    "banned_in_computed": false
+  },
+  "nav_first": {
+    "selector": ".main-nav a",
+    "computed": {
+      "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+      "fontStyle": "normal",
+      "fontWeight": "400"
+    },
+    "platform_fonts": [
+      {
+        "familyName": "Liberation Sans Narrow",
+        "postScriptName": "LiberationSansNarrow",
+        "isCustomFont": false,
+        "glyphCount": 4
+      },
+      {
+        "familyName": "Noto Sans CJK SC",
+        "postScriptName": "NotoSansCJKsc-Regular",
+        "isCustomFont": false,
+        "glyphCount": 2
+      }
+    ],
+    "banned_in_computed": false
+  },
+  "section_title": {
+    "selector": ".misallocation .section-title",
+    "computed": {
+      "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+      "fontStyle": "normal",
+      "fontWeight": "400"
+    },
+    "platform_fonts": [
+      {
+        "familyName": "Liberation Sans Narrow",
+        "postScriptName": "LiberationSansNarrow",
+        "isCustomFont": false,
+        "glyphCount": 7
+      },
+      {
+        "familyName": "Noto Sans CJK SC",
+        "postScriptName": "NotoSansCJKsc-Regular",
+        "isCustomFont": false,
+        "glyphCount": 36
+      }
+    ],
+    "banned_in_computed": false
+  },
+  "metric_label": {
+    "selector": ".metric-label",
+    "computed": {
+      "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+      "fontStyle": "normal",
+      "fontWeight": "400"
+    },
+    "platform_fonts": [
+      {
+        "familyName": "Noto Sans CJK SC",
+        "postScriptName": "NotoSansCJKsc-Regular",
+        "isCustomFont": false,
+        "glyphCount": 7
+      }
+    ],
+    "banned_in_computed": false
+  },
+  "metric_value": {
+    "selector": ".metric-value",
+    "computed": {
+      "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+      "fontStyle": "normal",
+      "fontWeight": "400"
+    },
+    "platform_fonts": [
+      {
+        "familyName": "Liberation Sans Narrow",
+        "postScriptName": "LiberationSansNarrow",
+        "isCustomFont": false,
+        "glyphCount": 11
+      }
+    ],
+    "banned_in_computed": false
+  },
+  "svg_cn": {
+    "selector": ".misallocation .diagram-svg text",
+    "computed": {
+      "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+      "fontStyle": "normal",
+      "fontWeight": "400"
+    },
+    "platform_fonts": [
+      {
+        "familyName": "Noto Sans CJK SC",
+        "postScriptName": "NotoSansCJKsc-Regular",
+        "isCustomFont": false,
+        "glyphCount": 4
+      }
+    ],
+    "banned_in_computed": false
+  },
+  "testimonial_title": {
+    "selector": ".testimonials-title",
+    "computed": {
+      "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+      "fontStyle": "normal",
+      "fontWeight": "400"
+    },
+    "platform_fonts": [
+      {
+        "familyName": "Noto Sans CJK SC",
+        "postScriptName": "NotoSansCJKsc-Regular",
+        "isCustomFont": false,
+        "glyphCount": 11
+      }
+    ],
+    "banned_in_computed": false
+  },
+  "button": {
+    "selector": ".savings-panel .button",
+    "computed": {
+      "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+      "fontStyle": "normal",
+      "fontWeight": "400"
+    },
+    "platform_fonts": [
+      {
+        "familyName": "Noto Sans CJK SC",
+        "postScriptName": "NotoSansCJKsc-Regular",
+        "isCustomFont": false,
+        "glyphCount": 6
+      }
+    ],
+    "banned_in_computed": false
+  },
+  "footer_cn": {
+    "selector": ".ending-bottom span:last-child",
+    "computed": {
+      "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+      "fontStyle": "normal",
+      "fontWeight": "400"
+    },
+    "platform_fonts": [
+      {
+        "familyName": "Liberation Sans Narrow",
+        "postScriptName": "LiberationSansNarrow",
+        "isCustomFont": false,
+        "glyphCount": 7
+      },
+      {
+        "familyName": "Noto Sans CJK SC",
+        "postScriptName": "NotoSansCJKsc-Regular",
+        "isCustomFont": false,
+        "glyphCount": 4
+      }
+    ],
+    "banned_in_computed": false
+  },
+  "ending_link": {
+    "selector": ".ending-grid a",
+    "computed": {
+      "fontFamily": "\"DIN Alternate\", \"DIN Condensed\", \"Arial Narrow\", \"Liberation Sans Narrow\", \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+      "fontStyle": "normal",
+      "fontWeight": "400"
+    },
+    "platform_fonts": [
+      {
+        "familyName": "Liberation Sans Narrow",
+        "postScriptName": "LiberationSansNarrow",
+        "isCustomFont": false,
+        "glyphCount": 4
+      },
+      {
+        "familyName": "Noto Sans CJK SC",
+        "postScriptName": "NotoSansCJKsc-Regular",
+        "isCustomFont": false,
+        "glyphCount": 2
+      }
+    ],
+    "banned_in_computed": false
+  },
+  "banned_computed_matches": [],
+  "banned_css_tokens": []
+}

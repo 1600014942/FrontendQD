@@ -1,0 +1,32 @@
+{
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "title": "同样的合格任务，\n更低的成本。",
+  "has99": false,
+  "has100": false,
+  "missingRequired": [],
+  "circles": 8,
+  "plusMarks": 1,
+  "description": "输入团队规模与当前 AI 支出，按等效质量口径估算可优化空间。",
+  "descNoWrap": "nowrap",
+  "descFits": true,
+  "descWidth": 560,
+  "descScrollWidth": 560,
+  "topAligned": true,
+  "controlsWidth": 864.15625,
+  "panelWidth": 813.84375,
+  "shellWidth": 1680,
+  "border": "1px rgba(17, 17, 17, 0.13)",
+  "radius": "12px",
+  "values": {
+    "team": "120",
+    "spend": "¥2,000",
+    "current": "¥2.88M / 年",
+    "after": "¥1.96M / 年",
+    "savings": "¥922K",
+    "badge": "约 32% 成本下降",
+    "rate": "预计单位任务成本下降 31%"
+  }
+}
