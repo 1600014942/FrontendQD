@@ -594,6 +594,20 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
 .article-nav small { font-size: 12px; }
 .field label { font-size: 13px; }
 
+/* Keep the smallest editorial metadata readable on real displays. */
+.section-kicker,
+.page-eyebrow,
+.content-label,
+.form-section h3 { font-size: 12px; }
+.article-no,
+.article-meta,
+.article-meta-line,
+.article-toc,
+.article-nav small,
+.field-help,
+.testimonial-card footer span { font-size: 13px; }
+.instrument-time { font-size: 13px; }
+
 @media (max-width: 1100px) {
   .hero-source { height: 430px; right: 50%; top: 4%; transform: translateX(50%); animation: none; }
   .misallocation .diagram-heading,
@@ -625,4 +639,5 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
   .article-body h2,
   .booking-copy h2 { font-size: 34px; }
   .site-ending { padding-bottom: 42px; }
+  .section-kicker { font-size: 12px; }
 }
