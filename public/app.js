@@ -351,16 +351,23 @@ function homeHtml() {
         <svg class="hero-flow" viewBox="0 0 1000 1000" aria-hidden="true">
           <defs><clipPath id="hero-flow-clip"><circle cx="500" cy="500" r="424"/></clipPath></defs>
           <g clip-path="url(#hero-flow-clip)" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round">
-            <path class="hero-flow-path flow-a" d="M122 492 C250 270 566 204 860 434"/>
-            <path class="hero-flow-path flow-b" d="M146 613 C350 410 644 352 874 535"/>
-            <path class="hero-flow-path flow-c" d="M238 772 C355 540 642 442 816 271"/>
-            <path class="hero-flow-path flow-d" d="M282 202 C407 391 597 612 779 758"/>
-            <path class="hero-flow-path flow-e" d="M182 364 C410 500 611 705 852 648"/>
+            <path id="hero-flow-a" class="hero-flow-path" d="M122 492 C250 270 566 204 860 434"/>
+            <path id="hero-flow-b" class="hero-flow-path" d="M146 613 C350 410 644 352 874 535"/>
+            <path id="hero-flow-c" class="hero-flow-path" d="M238 772 C355 540 642 442 816 271"/>
+            <path id="hero-flow-d" class="hero-flow-path" d="M282 202 C407 391 597 612 779 758"/>
+            <path id="hero-flow-e" class="hero-flow-path" d="M182 364 C410 500 611 705 852 648"/>
           </g>
           <g class="hero-flow-nodes">
             <circle class="hero-flow-node node-a" cx="286" cy="326" r="5"/><circle class="hero-flow-node node-b" cx="526" cy="260" r="4"/><circle class="hero-flow-node node-c" cx="748" cy="350" r="5"/>
             <circle class="hero-flow-node node-d" cx="342" cy="528" r="4"/><circle class="hero-flow-node node-e" cx="570" cy="455" r="5"/><circle class="hero-flow-node node-f" cx="773" cy="555" r="4"/>
             <circle class="hero-flow-node node-g" cx="411" cy="660" r="5"/><circle class="hero-flow-node node-h" cx="642" cy="694" r="4"/>
+          </g>
+          <g class="hero-flow-runners" clip-path="url(#hero-flow-clip)">
+            <circle class="hero-flow-runner" r="4"><animateMotion dur="5.8s" repeatCount="indefinite" rotate="auto"><mpath href="#hero-flow-a"/></animateMotion></circle>
+            <circle class="hero-flow-runner" r="4"><animateMotion dur="6.6s" begin="-2.1s" repeatCount="indefinite" rotate="auto"><mpath href="#hero-flow-b"/></animateMotion></circle>
+            <circle class="hero-flow-runner" r="3.5"><animateMotion dur="5.2s" begin="-3.3s" repeatCount="indefinite" rotate="auto"><mpath href="#hero-flow-c"/></animateMotion></circle>
+            <circle class="hero-flow-runner" r="4"><animateMotion dur="7.1s" begin="-1.4s" repeatCount="indefinite" rotate="auto"><mpath href="#hero-flow-d"/></animateMotion></circle>
+            <circle class="hero-flow-runner" r="3.5"><animateMotion dur="6.1s" begin="-4.2s" repeatCount="indefinite" rotate="auto"><mpath href="#hero-flow-e"/></animateMotion></circle>
           </g>
         </svg>
       </div>

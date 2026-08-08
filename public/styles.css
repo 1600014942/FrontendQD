@@ -515,16 +515,12 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
   pointer-events: none;
   animation: heroFloat 11s ease-in-out infinite;
 }
-.hero-flow-path { stroke-dasharray: 3 23; opacity: .42; animation: heroFlow 5.6s linear infinite; }
-.hero-flow-path.flow-b { animation-delay: -1.1s; animation-direction: reverse; }
-.hero-flow-path.flow-c { animation-delay: -2.8s; }
-.hero-flow-path.flow-d { animation-delay: -1.9s; animation-direction: reverse; }
-.hero-flow-path.flow-e { animation-delay: -4.1s; }
+.hero-flow-path { opacity: .32; }
 .hero-flow-node { fill: var(--ink); stroke: var(--paper); stroke-width: 2.25; opacity: .82; animation: heroNode 3.8s ease-in-out infinite; }
+.hero-flow-runner { fill: var(--ink); stroke: var(--paper); stroke-width: 1.8; opacity: .96; }
 .hero-flow-node.node-b, .hero-flow-node.node-e, .hero-flow-node.node-h { animation-delay: -.9s; }
 .hero-flow-node.node-c, .hero-flow-node.node-f { animation-delay: -1.8s; }
 .hero-flow-node.node-d, .hero-flow-node.node-g { animation-delay: -2.7s; }
-@keyframes heroFlow { to { stroke-dashoffset: -208; } }
 @keyframes heroNode { 0%, 100% { opacity: .45; } 45% { opacity: 1; } }
 
 .logo-strip-frame { position: relative; margin-inline: auto; }
@@ -719,7 +715,8 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
 @media (prefers-reduced-motion: reduce) {
   .misallocation .route-path,
   .frontier .route-path { animation: none; stroke-dashoffset: 0; }
-  .hero-flow, .hero-flow-path, .hero-flow-node { animation: none; }
+  .hero-flow, .hero-flow-node { animation: none; }
+  .hero-flow-runners { display: none; }
 }
 
 @media (max-width: 1100px) {
