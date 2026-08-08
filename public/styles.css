@@ -502,7 +502,7 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
 }
 
 .hero-source { height: 84%; right: 4%; top: 7%; }
-.hero-flow {
+.hero-particles {
   position: absolute;
   z-index: 1;
   right: 4%;
@@ -511,17 +511,9 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
   width: auto;
   aspect-ratio: 1;
   overflow: visible;
-  color: var(--ink);
   pointer-events: none;
   animation: heroFloat 11s ease-in-out infinite;
 }
-.hero-flow-path { opacity: .32; }
-.hero-flow-node { fill: var(--ink); stroke: var(--paper); stroke-width: 2.25; opacity: .82; animation: heroNode 3.8s ease-in-out infinite; }
-.hero-flow-runner { fill: var(--ink); stroke: var(--paper); stroke-width: 1.8; opacity: .96; }
-.hero-flow-node.node-b, .hero-flow-node.node-e, .hero-flow-node.node-h { animation-delay: -.9s; }
-.hero-flow-node.node-c, .hero-flow-node.node-f { animation-delay: -1.8s; }
-.hero-flow-node.node-d, .hero-flow-node.node-g { animation-delay: -2.7s; }
-@keyframes heroNode { 0%, 100% { opacity: .45; } 45% { opacity: 1; } }
 
 .logo-strip-frame { position: relative; margin-inline: auto; }
 
@@ -715,12 +707,11 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
 @media (prefers-reduced-motion: reduce) {
   .misallocation .route-path,
   .frontier .route-path { animation: none; stroke-dashoffset: 0; }
-  .hero-flow, .hero-flow-node { animation: none; }
-  .hero-flow-runners { display: none; }
+  .hero-particles { display: none; animation: none; }
 }
 
 @media (max-width: 1100px) {
-  .hero-source, .hero-flow { height: 430px; right: 50%; top: 4%; transform: translateX(50%); animation: none; }
+  .hero-source, .hero-particles { height: 430px; right: 50%; top: 4%; transform: translateX(50%); animation: none; }
   .misallocation .diagram-heading,
   .frontier .diagram-heading,
   .loop .diagram-heading { text-align: center; }
@@ -736,7 +727,7 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
 }
 
 @media (max-width: 767px) {
-  .hero-source, .hero-flow { height: 315px; right: 50%; top: 0; transform: translateX(50%); }
+  .hero-source, .hero-particles { height: 315px; right: 50%; top: 0; transform: translateX(50%); }
   .misallocation .diagram-figure,
   .frontier .diagram-figure,
   .loop .diagram-figure { width: 100%; }

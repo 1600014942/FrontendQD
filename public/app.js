@@ -348,28 +348,7 @@ function homeHtml() {
       </div>
       <div class="hero-visual" aria-label="清度原始流线场球体主视觉">
         <img class="hero-source" src="/assets/figures/hero-ball-transparent.png" alt="由细密流线构成的黑白球体，清度科技原始主视觉">
-        <svg class="hero-flow" viewBox="0 0 1000 1000" aria-hidden="true">
-          <defs><clipPath id="hero-flow-clip"><circle cx="500" cy="500" r="424"/></clipPath></defs>
-          <g clip-path="url(#hero-flow-clip)" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round">
-            <path id="hero-flow-a" class="hero-flow-path" d="M122 492 C250 270 566 204 860 434"/>
-            <path id="hero-flow-b" class="hero-flow-path" d="M146 613 C350 410 644 352 874 535"/>
-            <path id="hero-flow-c" class="hero-flow-path" d="M238 772 C355 540 642 442 816 271"/>
-            <path id="hero-flow-d" class="hero-flow-path" d="M282 202 C407 391 597 612 779 758"/>
-            <path id="hero-flow-e" class="hero-flow-path" d="M182 364 C410 500 611 705 852 648"/>
-          </g>
-          <g class="hero-flow-nodes">
-            <circle class="hero-flow-node node-a" cx="286" cy="326" r="5"/><circle class="hero-flow-node node-b" cx="526" cy="260" r="4"/><circle class="hero-flow-node node-c" cx="748" cy="350" r="5"/>
-            <circle class="hero-flow-node node-d" cx="342" cy="528" r="4"/><circle class="hero-flow-node node-e" cx="570" cy="455" r="5"/><circle class="hero-flow-node node-f" cx="773" cy="555" r="4"/>
-            <circle class="hero-flow-node node-g" cx="411" cy="660" r="5"/><circle class="hero-flow-node node-h" cx="642" cy="694" r="4"/>
-          </g>
-          <g class="hero-flow-runners" clip-path="url(#hero-flow-clip)">
-            <circle class="hero-flow-runner" r="4"><animateMotion dur="5.8s" repeatCount="indefinite" rotate="auto"><mpath href="#hero-flow-a"/></animateMotion></circle>
-            <circle class="hero-flow-runner" r="4"><animateMotion dur="6.6s" begin="-2.1s" repeatCount="indefinite" rotate="auto"><mpath href="#hero-flow-b"/></animateMotion></circle>
-            <circle class="hero-flow-runner" r="3.5"><animateMotion dur="5.2s" begin="-3.3s" repeatCount="indefinite" rotate="auto"><mpath href="#hero-flow-c"/></animateMotion></circle>
-            <circle class="hero-flow-runner" r="4"><animateMotion dur="7.1s" begin="-1.4s" repeatCount="indefinite" rotate="auto"><mpath href="#hero-flow-d"/></animateMotion></circle>
-            <circle class="hero-flow-runner" r="3.5"><animateMotion dur="6.1s" begin="-4.2s" repeatCount="indefinite" rotate="auto"><mpath href="#hero-flow-e"/></animateMotion></circle>
-          </g>
-        </svg>
+        <canvas class="hero-particles" aria-hidden="true"></canvas>
       </div>
     </div></section>
 
@@ -536,6 +515,96 @@ function initLiveMetrics() {
         [savings, tokens].forEach(el => { el.classList.remove('is-updating'); void el.offsetWidth; el.classList.add('is-updating'); });
     }, 3200);
 }
+function initHeroParticleFlow() {
+    const image = document.querySelector('.hero-source');
+    const canvas = document.querySelector('.hero-particles');
+    if (!image || !canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+        return;
+    const start = () => {
+        const width = image.naturalWidth, height = image.naturalHeight;
+        if (!width || !height)
+            return;
+        const source = document.createElement('canvas');
+        source.width = width;
+        source.height = height;
+        const sourceContext = source.getContext('2d', { willReadFrequently: true });
+        if (!sourceContext)
+            return;
+        sourceContext.drawImage(image, 0, 0, width, height);
+        const pixels = sourceContext.getImageData(0, 0, width, height).data;
+        const luma = (x, y) => { const px = Math.max(0, Math.min(width - 1, Math.round(x))), py = Math.max(0, Math.min(height - 1, Math.round(y))), i = (py * width + px) * 4; return pixels[i] * .299 + pixels[i + 1] * .587 + pixels[i + 2] * .114; };
+        const inOrb = (x, y) => Math.hypot(x - width * .5, y - height * .475) < width * .425;
+        const seed = (particle) => {
+            for (let attempt = 0; attempt < 900; attempt += 1) {
+                const x = width * (.08 + Math.random() * .84), y = height * (.06 + Math.random() * .82);
+                if (inOrb(x, y) && luma(x, y) < 205) {
+                    particle.x = x;
+                    particle.y = y;
+                    particle.vx = 0;
+                    particle.vy = 0;
+                    particle.life = 0;
+                    return;
+                }
+            }
+            particle.x = width * .5;
+            particle.y = height * .48;
+            particle.vx = 1;
+            particle.vy = 0;
+            particle.life = 0;
+        };
+        const tangent = (x, y, vx, vy) => {
+            const gx = luma(x + 2, y) - luma(x - 2, y), gy = luma(x, y + 2) - luma(x, y - 2), magnitude = Math.hypot(gx, gy);
+            if (magnitude < 5)
+                return null;
+            let tx = -gy / magnitude, ty = gx / magnitude;
+            if (vx * tx + vy * ty < 0) {
+                tx = -tx;
+                ty = -ty;
+            }
+            return { x: tx, y: ty };
+        };
+        const particles = Array.from({ length: 24 }, () => { const particle = { x: 0, y: 0, vx: 0, vy: 0, life: 0 }; seed(particle); return particle; });
+        const context = canvas.getContext('2d');
+        if (!context)
+            return;
+        let frame = 0, last = performance.now();
+        const resize = () => { const rect = canvas.getBoundingClientRect(), ratio = Math.min(window.devicePixelRatio || 1, 2); canvas.width = Math.round(rect.width * ratio); canvas.height = Math.round(rect.height * ratio); context.setTransform(ratio, 0, 0, ratio, 0, 0); };
+        const draw = (now) => {
+            const delta = Math.min((now - last) / 1000, .04);
+            last = now;
+            const rect = canvas.getBoundingClientRect();
+            context.clearRect(0, 0, rect.width, rect.height);
+            particles.forEach(particle => {
+                const direction = tangent(particle.x, particle.y, particle.vx, particle.vy);
+                if (!direction || !inOrb(particle.x, particle.y) || particle.life > 11) {
+                    seed(particle);
+                    return;
+                }
+                particle.vx = particle.vx * .72 + direction.x * .28;
+                particle.vy = particle.vy * .72 + direction.y * .28;
+                const velocity = Math.hypot(particle.vx, particle.vy) || 1;
+                particle.vx /= velocity;
+                particle.vy /= velocity;
+                particle.x += particle.vx * 42 * delta;
+                particle.y += particle.vy * 42 * delta;
+                particle.life += delta;
+                context.beginPath();
+                context.arc(particle.x / width * rect.width, particle.y / height * rect.height, 1.65, 0, Math.PI * 2);
+                context.fillStyle = 'rgba(17,17,17,.78)';
+                context.fill();
+            });
+            frame = requestAnimationFrame(draw);
+        };
+        resize();
+        window.addEventListener('resize', resize, { passive: true });
+        frame = requestAnimationFrame(draw);
+        window.addEventListener('pagehide', () => cancelAnimationFrame(frame), { once: true });
+    };
+    if (image.complete)
+        start();
+    else
+        image.addEventListener('load', start, { once: true });
+}
 function initTestimonials() {
     const el = document.querySelector('.testimonial-viewport');
     if (!el)
@@ -618,6 +687,7 @@ function render() {
     initReveal();
     initCalculator();
     initLiveMetrics();
+    initHeroParticleFlow();
     initTestimonials();
     initBooking();
 }
