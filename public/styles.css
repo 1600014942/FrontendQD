@@ -580,9 +580,9 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
   background-size: 782px 322px;
   background-position: -45px -220px;
 }
-.avatar-one { background-image: url('/assets/original/image7.png'); }
-.avatar-two { background-image: url('/assets/original/image9.png'); }
-.avatar-three { background-image: url('/assets/original/image8.png'); }
+.avatar-one { background-image: url('assets/original/image7.png'); }
+.avatar-two { background-image: url('assets/original/image9.png'); }
+.avatar-three { background-image: url('assets/original/image8.png'); }
 
 .site-ending { padding-bottom: 54px; }
 
