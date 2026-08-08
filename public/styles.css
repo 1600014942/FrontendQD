@@ -735,3 +735,15 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
   .metric-value { font-size: 30px; }
   .loop-diagram-caption { font-size: 16px; }
 }
+
+/* 2026-08-08: unify testimonial avatar sizes */
+.testimonial-card .testimonial-avatar {
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  min-height: 48px !important;
+  flex: 0 0 48px !important;
+  border-radius: 50% !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
