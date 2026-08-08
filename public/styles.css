@@ -89,7 +89,7 @@ main { overflow: hidden; }
 .diagram-svg .node-dark { fill: currentColor; stroke: currentColor; stroke-width: 1.25; }
 .diagram-svg .node-text { fill: currentColor; font-size: 18px; }
 .diagram-svg .node-text-dark { fill: var(--paper); font-size: 18px; }
-.diagram-svg .route-path { stroke-dasharray: 1600; stroke-dashoffset: 1600; animation: drawRoute 1.5s ease forwards; }
+.diagram-svg .route-path { stroke-dasharray: 1600; stroke-dashoffset: 1600; animation: drawRoute 2.35s cubic-bezier(.42,0,1,1) forwards; }
 @keyframes drawRoute { to { stroke-dashoffset: 0; } }
 .misallocation .diagram-heading { max-width: 1240px; }
 .frontier .diagram-heading { max-width: 920px; }
@@ -668,13 +668,13 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
 .misallocation .route-path,
 .frontier .route-path { animation: none; stroke-dashoffset: 1600; }
 .misallocation .diagram-figure.visible .route-path,
-.frontier .diagram-figure.visible .route-path { animation: drawRoute 1.5s ease forwards; }
-.misallocation .diagram-figure.visible .route-path:nth-child(2) { animation-delay: .12s; }
-.misallocation .diagram-figure.visible .route-path:nth-child(3) { animation-delay: .24s; }
-.misallocation .diagram-figure.visible .route-path:nth-child(4) { animation-delay: .36s; }
-.misallocation .diagram-figure.visible .route-path:nth-child(5) { animation-delay: .48s; }
-.misallocation .diagram-figure.visible .route-path:nth-child(6) { animation-delay: .60s; }
-.misallocation .diagram-figure.visible .route-path:nth-child(7) { animation-delay: .72s; }
+.frontier .diagram-figure.visible .route-path { animation: drawRoute 2.35s cubic-bezier(.42,0,1,1) forwards; }
+.misallocation .diagram-figure.visible .route-path:nth-child(2) { animation-delay: .16s; }
+.misallocation .diagram-figure.visible .route-path:nth-child(3) { animation-delay: .32s; }
+.misallocation .diagram-figure.visible .route-path:nth-child(4) { animation-delay: .48s; }
+.misallocation .diagram-figure.visible .route-path:nth-child(5) { animation-delay: .64s; }
+.misallocation .diagram-figure.visible .route-path:nth-child(6) { animation-delay: .80s; }
+.misallocation .diagram-figure.visible .route-path:nth-child(7) { animation-delay: .96s; }
 
 @media (prefers-reduced-motion: reduce) {
   .misallocation .route-path,
