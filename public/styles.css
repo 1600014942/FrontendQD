@@ -566,9 +566,23 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
   font-weight: 400;
   line-height: 1.65;
 }
-.testimonial-card footer { margin-top: auto; padding-top: 54px; display: flex; flex-direction: column; gap: 6px; }
+.testimonial-card footer { margin-top: auto; padding-top: 54px; display: flex; align-items: center; gap: 13px; }
+.testimonial-person { display: flex; flex-direction: column; gap: 6px; }
 .testimonial-card footer strong { font-size: 13px; font-weight: 500; }
-.testimonial-card footer span { color: var(--muted); font-size: 12px; line-height: 1.5; }
+.testimonial-card footer .testimonial-person > span { color: var(--muted); font-size: 12px; line-height: 1.5; }
+.testimonial-avatar {
+  display: block;
+  width: 54px;
+  height: 54px;
+  flex: 0 0 54px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-size: 782px 322px;
+  background-position: -45px -220px;
+}
+.avatar-one { background-image: url('/assets/original/image7.png'); }
+.avatar-two { background-image: url('/assets/original/image9.png'); }
+.avatar-three { background-image: url('/assets/original/image8.png'); }
 
 .site-ending { padding-bottom: 54px; }
 
@@ -614,7 +628,7 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
 .article-toc,
 .article-nav small,
 .field-help,
-.testimonial-card footer span { font-size: 13px; }
+.testimonial-card footer .testimonial-person > span { font-size: 13px; }
 .instrument-time { font-size: 13px; }
 
 /* Diagram index labels and figure notes need to remain readable after SVG scaling. */
