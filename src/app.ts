@@ -248,7 +248,7 @@ function headerHtml(path: string): string {
         <a href="/acu-index/"${current('/acu-index')}>ACU 指数</a>
         <a href="https://eu.jerrypsy.top/acu-router/" target="_blank" rel="noreferrer">成本优化器</a>
         <a href="https://eu.jerrypsy.top:8443/dashboard/overview" target="_blank" rel="noreferrer">控制台</a>
-        <a href="/articles/"${current('/articles')}>文章</a>
+        <a href="/articles/"${current('/articles')}>理论</a>
         <a class="contact-button" href="/book-demo/"${current('/book-demo')}>联系我们</a>
       </nav>
     </div>
