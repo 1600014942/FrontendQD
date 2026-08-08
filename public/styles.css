@@ -523,7 +523,16 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
 .loop .diagram-heading .section-title,
 .loop .diagram-heading .section-subtitle { text-align: center; }
 .loop .diagram-heading .section-subtitle { margin-inline: auto; }
-.loop .diagram-figure { grid-column: 1 / -1; width: 94%; justify-self: center; }
+.loop .diagram-figure {
+  grid-column: 1 / -1;
+  width: 94%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+}
+.loop .diagram-figure .loop-svg { width: 100%; margin-left: auto; margin-right: auto; }
 
 .calculator-title-row,
 .calculator-shell { width: 80%; margin-inline: auto; }
