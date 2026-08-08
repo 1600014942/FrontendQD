@@ -350,9 +350,10 @@ function homeHtml(): string {
         <p class="hero-deck">AI 产能配置引擎，帮助用户在同样预算下，完成更多高质量任务</p>
         <div class="hero-data">
           <div class="metric-grid">
-            <div class="metric"><div class="metric-label">已为开发者节省</div><div class="metric-value" id="live-savings">¥ 8,426,300</div></div>
+            <div class="metric"><div class="metric-label">已为开发者节省</div><div class="metric-value" id="live-savings">¥ 84,279.01</div></div>
             <div class="metric"><div class="metric-label">累计节省 <span class="latin">Token</span></div><div class="metric-value" id="live-tokens">1.2800B</div></div>
             <div class="metric"><div class="metric-label">任务效能利用率提升</div><div class="metric-value" id="live-efficiency">29.4%</div></div>
+            <div class="metric"><div class="metric-label">任务级稳定性</div><div class="metric-value">99.99%</div></div>
           </div>
         </div>
       </div>
@@ -499,12 +500,12 @@ function initLiveMetrics(): void {
   const tokens=document.querySelector<HTMLElement>('#live-tokens');
   const efficiency=document.querySelector<HTMLElement>('#live-efficiency');
   if(!savings||!tokens||!efficiency||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-  let saved=8_426_300, tokenTotal=1.2800, tick=0;
+  let saved=84_279.01, tokenTotal=1.2800, tick=0;
   window.setInterval(()=>{
     tick+=1;
-    saved+=17+(tick%5)*6;
+    saved+=.07+(tick%5)*.03;
     tokenTotal+=.00001;
-    savings.textContent=`¥ ${saved.toLocaleString('en-US')}`;
+    savings.textContent=`¥ ${saved.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}`;
     tokens.textContent=`${tokenTotal.toFixed(4)}B`;
     efficiency.textContent=`${(29.4+(tick%3)*.1).toFixed(1)}%`;
     [savings,tokens,efficiency].forEach(el=>{el.classList.remove('is-updating');void el.offsetWidth;el.classList.add('is-updating');});

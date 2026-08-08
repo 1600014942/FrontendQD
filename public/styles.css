@@ -631,6 +631,10 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
 .testimonial-card footer .testimonial-person > span { font-size: 13px; }
 .instrument-time { font-size: 13px; }
 
+/* Four live hero indicators retain the original compact data band. */
+.metric-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(16px, 1.8vw, 28px); }
+.metric-value { font-size: clamp(26px, 2vw, 40px); }
+
 /* Diagram index labels and figure notes need to remain readable after SVG scaling. */
 .misallocation .diagram-heading,
 .frontier .diagram-heading,
@@ -693,6 +697,7 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
   .calculator-shell { width: 100%; }
   .calculator-shell { grid-template-columns: 1fr; }
   .testimonial-card { width: min(520px, 74vw); }
+  .metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 32px; }
 }
 
 @media (max-width: 767px) {
@@ -713,4 +718,6 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
   .booking-copy h2 { font-size: 34px; }
   .site-ending { padding-bottom: 42px; }
   .section-kicker { font-size: 12px; }
+  .metric-grid { grid-template-columns: 1fr; gap: 0; }
+  .metric-value { font-size: 30px; }
 }
