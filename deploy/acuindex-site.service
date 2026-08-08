@@ -7,6 +7,7 @@ Type=simple
 WorkingDirectory=/root/jerry/FrontendQD
 Environment=NODE_ENV=production
 Environment=PORT=4173
+EnvironmentFile=-/etc/acuindex-site.env
 ExecStart=/usr/bin/node /root/jerry/FrontendQD/server.mjs
 Restart=on-failure
 RestartSec=3

@@ -27,6 +27,6 @@
 
 ## 域名与品牌元数据
 
-- 示例 canonical 与 sitemap 使用 `https://acuindex.cn`，部署前应按真实域名替换；
-- Open Graph 使用本地 SVG 品牌图；
+- 当前 canonical、Open Graph 与 sitemap 使用 `https://eu.jerrypsy.top/acu/index/` 生产前缀；未来切换正式独立域名时必须同时修改 `build.mjs`、`src/shell.html`、`public/robots.txt` 和 `public/sitemap.xml`，然后重新构建；
+- Open Graph 使用 `/acu/index/og.svg` 品牌图；
 - 未提供 ICP、隐私政策或公司注册地址，因此未自行补写。
