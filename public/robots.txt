@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://acuindex.cn/sitemap.xml
+Sitemap: https://eu.jerrypsy.top/acu/index/sitemap.xml
