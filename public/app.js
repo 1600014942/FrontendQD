@@ -325,7 +325,6 @@ function capacityLoopSvg() {
       <text x="220" y="448" text-anchor="middle">成本</text><text x="390" y="578" text-anchor="middle">质量</text><text x="620" y="596" text-anchor="middle">回退方案</text><text x="855" y="569" text-anchor="middle">接受率</text><text x="1045" y="489" text-anchor="middle">延迟</text>
       <text x="720" y="405" text-anchor="middle" class="loop-title">私有产能曲线</text>
     </g>
-    <text x="720" y="675" text-anchor="middle" class="diagram-footnote">执行数据沉淀为更优的资源分配。</text>
   </svg>`;
 }
 function homeHtml() {
@@ -364,6 +363,7 @@ function homeHtml() {
     <section class="screen diagram-screen loop"><div class="screen-inner">
       <div class="reveal diagram-heading"><div class="section-kicker">3. 构建私有产能闭环</div><h2 class="section-title">每一次调用，都让下一次路由更智能。</h2><p class="section-subtitle">清度将真实执行转化为私有产能账本，使未来的资源分配更加精准。</p></div>
       ${diagramFrame(capacityLoopSvg(), '任务识别、任务画像、清度路由器、执行调用、质量验证、能力账本构成的私有产能闭环。')}
+      <p class="loop-diagram-caption">执行数据沉淀为更优的资源分配。</p>
     </div></section>
 
     <section class="screen calculator-section"><div class="screen-inner">
