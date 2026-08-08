@@ -631,26 +631,12 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
 .testimonial-card footer .testimonial-person > span { font-size: 13px; }
 .instrument-time { font-size: 13px; }
 
-/* Four live hero indicators retain the original compact data band. */
-.metric-grid {
-  grid-template-columns: minmax(180px, 1.55fr) minmax(122px, 1.1fr) repeat(2, minmax(108px, 1fr));
-  gap: clamp(18px, 1.6vw, 26px);
-}
-.metric-value { font-size: clamp(26px, 2vw, 40px); }
-.metric.is-live .metric-label::after {
-  content: "";
-  display: inline-block;
-  width: 5px;
-  height: 5px;
-  margin: 0 0 2px 7px;
-  border-radius: 50%;
-  background: var(--ink);
-  animation: liveStatus 2.8s ease-in-out infinite;
-}
-@keyframes liveStatus {
-  0%, 100% { opacity: .28; transform: scale(.8); }
-  45% { opacity: 1; transform: scale(1); }
-}
+/* Four live hero indicators share equal columns and equal gutters. */
+.metric-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(18px, 2vw, 30px); }
+.metric { min-width: 0; }
+.metric-value { font-size: clamp(24px, 2vw, 32px); letter-spacing: 0; }
+.hero-live-note { display: inline-flex; align-items: center; gap: 8px; margin-top: 17px; color: var(--muted); font-size: 12px; line-height: 1.3; }
+.hero-live-dot { width: 7px; height: 7px; border: 1px solid var(--ink); border-radius: 50%; }
 
 /* Diagram index labels and figure notes need to remain readable after SVG scaling. */
 .misallocation .diagram-heading,
@@ -709,7 +695,6 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
 @media (prefers-reduced-motion: reduce) {
   .misallocation .route-path,
   .frontier .route-path { animation: none; stroke-dashoffset: 0; }
-  .metric.is-live .metric-label::after { animation: none; opacity: .7; }
 }
 
 @media (max-width: 1100px) {

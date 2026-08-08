@@ -351,11 +351,12 @@ function homeHtml(): string {
         <p class="hero-deck">AI 产能配置引擎，帮助用户在同样预算下，完成更多高质量任务</p>
         <div class="hero-data">
           <div class="metric-grid">
-            <div class="metric is-live"><div class="metric-label">已为开发者节省</div><div class="metric-value" id="live-savings">¥ 84,279.01</div></div>
-            <div class="metric is-live"><div class="metric-label">累计节省 <span class="latin">Token</span></div><div class="metric-value" id="live-tokens">1.2800B</div></div>
-            <div class="metric"><div class="metric-label">任务效能利用率提升</div><div class="metric-value" id="live-efficiency">29.4%</div></div>
+            <div class="metric"><div class="metric-label">已为开发者节省</div><div class="metric-value" id="live-savings">¥ 84,279.01</div></div>
+            <div class="metric"><div class="metric-label">累计节省 <span class="latin">Token</span></div><div class="metric-value" id="live-tokens">1.2800B</div></div>
+            <div class="metric"><div class="metric-label"><span class="latin">Token</span>利用率提升</div><div class="metric-value" id="live-efficiency">29.4%</div></div>
             <div class="metric"><div class="metric-label">任务级稳定性</div><div class="metric-value">99.99%</div></div>
           </div>
+          <div class="hero-live-note"><span class="hero-live-dot" aria-hidden="true"></span><span>实时更新</span></div>
         </div>
       </div>
       <div class="hero-visual" aria-label="清度原始流线场球体主视觉"><img class="hero-source" src="/assets/figures/hero-ball-transparent.png" alt="由细密流线构成的黑白椭圆球体，清度科技原始主视觉"></div>
