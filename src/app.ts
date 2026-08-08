@@ -215,26 +215,32 @@ const instrumentGroups = [
 
 
 
+const SITE_BASE = '/acu/index';
+
+function sitePath(path = '/'): string {
+  return path === '/' ? `${SITE_BASE}/` : `${SITE_BASE}${path}`;
+}
+
 function headerHtml(path: string): string {
   const current = (prefix: string) => path.startsWith(prefix) ? ' aria-current="page"' : '';
   return `
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand-lockup" href="/" aria-label="清度科技首页"><span class="brand-box">ACUindex</span><span>清度</span></a>
+      <a class="brand-lockup" href="${sitePath()}" aria-label="清度科技首页"><span class="brand-box">ACUindex</span><span>清度</span></a>
       <button class="mobile-toggle" aria-expanded="false" aria-label="打开导航菜单"><span></span><span></span></button>
       <nav class="main-nav" aria-label="主导航">
-        <a href="/acu-index/"${current('/acu-index')}>ACU 指数</a>
+        <a href="${sitePath('/acu-index/')}"${current('/acu-index')}>ACU 指数</a>
         <a href="https://eu.jerrypsy.top/acu-router/" target="_blank" rel="noreferrer">成本优化器</a>
-        <a href="https://eu.jerrypsy.top:8443/dashboard/overview" target="_blank" rel="noreferrer">控制台</a>
-        <a href="/articles/"${current('/articles')}>文章</a>
-        <a class="contact-button" href="/book-demo/"${current('/book-demo')}>联系我们</a>
+        <a href="https://eu.jerrypsy.top/acu/dashboard/overview" target="_blank" rel="noreferrer">控制台</a>
+        <a href="${sitePath('/articles/')}"${current('/articles')}>文章</a>
+        <a class="contact-button" href="${sitePath('/book-demo/')}"${current('/book-demo')}>联系我们</a>
       </nav>
     </div>
   </header>`;
 }
 
 function footerHtml(): string {
-  return `<footer class="site-footer"><div class="footer-inner"><span>© ${new Date().getFullYear()} 清度科技 / ACUindex</span><div class="footer-links"><a href="/acu-index/">方法论</a><a href="/articles/">文章</a><a href="https://eu.jerrypsy.top:8443/pricing" target="_blank" rel="noreferrer">API / 价格</a><a href="/book-demo/">预约演示</a></div></div></footer>`;
+  return `<footer class="site-footer"><div class="footer-inner"><span>© ${new Date().getFullYear()} 清度科技 / ACUindex</span><div class="footer-links"><a href="${sitePath('/acu-index/')}">方法论</a><a href="${sitePath('/articles/')}">文章</a><a href="https://eu.jerrypsy.top/acu/pricing" target="_blank" rel="noreferrer">API / 价格</a><a href="${sitePath('/book-demo/')}">预约演示</a></div></div></footer>`;
 }
 
 function diagramFrame(svg: string, alt: string): string {
@@ -334,11 +340,11 @@ function homeHtml(): string {
           </div>
         </div>
       </div>
-      <div class="hero-visual" aria-label="清度原始流线场球体主视觉"><img class="hero-source" src="/assets/figures/hero-ball-transparent.png" alt="由细密流线构成的黑白椭圆球体，清度科技原始主视觉"></div>
+      <div class="hero-visual" aria-label="清度原始流线场球体主视觉"><img class="hero-source" src="${sitePath('/assets/figures/hero-ball-transparent.png')}" alt="由细密流线构成的黑白椭圆球体，清度科技原始主视觉"></div>
     </div></section>
 
     <section class="screen ecosystem"><div class="screen-inner"><div class="reveal">
-      <div class="logo-strip-frame" tabindex="0" aria-label="支持接入的平台、模型与开发工具 Logo"><img class="logo-strip" src="/assets/figures/logo-strip.png" alt="为一线开发者：清度支持接入的平台、模型与开发工具"></div>
+      <div class="logo-strip-frame" tabindex="0" aria-label="支持接入的平台、模型与开发工具 Logo"><img class="logo-strip" src="${sitePath('/assets/figures/logo-strip.png')}" alt="为一线开发者：清度支持接入的平台、模型与开发工具"></div>
     </div></div></section>
 
     <section class="screen diagram-screen misallocation"><div class="screen-inner">
@@ -373,7 +379,7 @@ function homeHtml(): string {
           <div class="savings-rule"></div><div class="savings-main-label">预计年度节省</div>
           <div class="savings-main"><div class="savings-amount" id="savings-amount">¥922K</div><div class="savings-badge" id="savings-badge">约 32% 成本下降</div></div>
           <div class="savings-caption">在保持同等任务质量与验收标准下</div><div class="savings-rate" id="savings-rate">预计单位任务成本下降 31%</div>
-          <a class="button button-light" href="/book-demo/">预约专属测算</a>
+          <a class="button button-light" href="${sitePath('/book-demo/')}">预约专属测算</a>
         </div>
       </div>
     </div></section>
@@ -381,21 +387,21 @@ function homeHtml(): string {
     <section class="screen testimonials"><div class="screen-inner">
       <div class="testimonials-head"><div><div class="section-kicker testimonials-kicker">PRIVATE CAPACITY IN PRACTICE</div><h2 class="testimonials-title">来自真实使用场景的反馈</h2></div></div>
       <div class="testimonial-viewport" tabindex="0" role="region" aria-label="客户评价卡片，可横向滚动"><div class="testimonial-track">
-        <article class="testimonial-card"><img src="/assets/original/image7.png" alt="某企业 AI 应用公司技术负责人评价"></article>
-        <article class="testimonial-card"><img src="/assets/original/image9.png" alt="某开发者工具团队研发负责人评价"></article>
-        <article class="testimonial-card"><img src="/assets/original/image8.png" alt="某 AI 影像平台创始人评价"></article>
+        <article class="testimonial-card"><img src="${sitePath('/assets/original/image7.png')}" alt="某企业 AI 应用公司技术负责人评价"></article>
+        <article class="testimonial-card"><img src="${sitePath('/assets/original/image9.png')}" alt="某开发者工具团队研发负责人评价"></article>
+        <article class="testimonial-card"><img src="${sitePath('/assets/original/image8.png')}" alt="某 AI 影像平台创始人评价"></article>
       </div></div>
     </div></section>
 
-    <section class="screen final-cta"><div class="screen-inner"><div class="reveal"><h2 class="final-title">同等质量下，让每一块 AI 预算完成更多任务</h2><p class="final-subtitle">用 AI 产能配置，开始真正省下 AI 成本</p><a class="button button-dark" href="/book-demo/">预约演示</a></div></div></section>
+    <section class="screen final-cta"><div class="screen-inner"><div class="reveal"><h2 class="final-title">同等质量下，让每一块 AI 预算完成更多任务</h2><p class="final-subtitle">用 AI 产能配置，开始真正省下 AI 成本</p><a class="button button-dark" href="${sitePath('/book-demo/')}">预约演示</a></div></div></section>
 
     <section class="site-ending" aria-label="清度科技网站结尾"><div class="ending-inner">
-      <div class="ending-top"><a class="ending-brand" href="/"><span class="brand-box">ACUindex</span><span>清度</span></a><p>AI 产能配置基础设施<br>释放每一滴 <span class="latin">Token</span> 的最大产能</p></div>
+      <div class="ending-top"><a class="ending-brand" href="${sitePath()}"><span class="brand-box">ACUindex</span><span>清度</span></a><p>AI 产能配置基础设施<br>释放每一滴 <span class="latin">Token</span> 的最大产能</p></div>
       <div class="ending-rule"></div>
       <div class="ending-grid">
-        <div><span class="ending-label">PRODUCT</span><a href="/acu-index/">ACU 指数</a><a href="https://eu.jerrypsy.top/acu-router/" target="_blank" rel="noreferrer">成本优化器</a><a href="https://eu.jerrypsy.top:8443/dashboard/overview" target="_blank" rel="noreferrer">控制台</a></div>
-        <div><span class="ending-label">READ</span><a href="/articles/">行业观点</a><a href="/articles/token-is-not-capacity/">为什么 Token 不是 AI 产能</a><a href="/articles/public-and-private-acu/">Public / Private ACU</a></div>
-        <div><span class="ending-label">CONTACT</span><a href="/book-demo/">预约演示</a><a href="https://eu.jerrypsy.top:8443/pricing" target="_blank" rel="noreferrer">API / 价格</a><span class="ending-muted">Public reference · Demo-stage methodology · Not for settlement</span></div>
+        <div><span class="ending-label">PRODUCT</span><a href="${sitePath('/acu-index/')}">ACU 指数</a><a href="https://eu.jerrypsy.top/acu-router/" target="_blank" rel="noreferrer">成本优化器</a><a href="https://eu.jerrypsy.top/acu/dashboard/overview" target="_blank" rel="noreferrer">控制台</a></div>
+        <div><span class="ending-label">READ</span><a href="${sitePath('/articles/')}">行业观点</a><a href="${sitePath('/articles/token-is-not-capacity/')}">为什么 Token 不是 AI 产能</a><a href="${sitePath('/articles/public-and-private-acu/')}">Public / Private ACU</a></div>
+        <div><span class="ending-label">CONTACT</span><a href="${sitePath('/book-demo/')}">预约演示</a><a href="https://eu.jerrypsy.top/acu/pricing" target="_blank" rel="noreferrer">API / 价格</a><span class="ending-muted">Public reference · Demo-stage methodology · Not for settlement</span></div>
       </div>
       <div class="ending-bottom"><span>QINGDU TECHNOLOGY / ACUINDEX</span><span>© ${new Date().getFullYear()} 清度科技</span></div>
     </div></section>
@@ -417,19 +423,19 @@ function acuIndexHtml(): string {
     <section class="page-hero"><div class="page-wrap"><div class="page-eyebrow">ACU Index / Public Reference</div><h1 class="page-title">为 AI 产能建立<br>可比较的计量口径</h1><p class="page-intro">ACU 是任务族原生的 AI 产能单位，不是通用智能分数，也不是 Token 单价。当前页面为 Demo-stage methodology 与产品入口，不提供结算指数。</p></div></section>
     <section class="content-section"><div class="page-wrap split-grid"><div class="content-label">UNIT &amp; BOUNDARY</div><div class="content-body"><h2>先定义任务、验证与成本边界，再讨论指数。</h2><p>ACU 把公开 Benchmark 结果翻译为任务族报价，同时保留模型—运行时身份、验证器类型、成本模式、置信度与数据模式。缺失值保持缺失，不被当作 0。</p><div class="definition-grid">${defs.map(d => `<div class="definition"><div class="definition-symbol">${d[0]}</div><p>${d[1]}</p></div>`).join('')}</div></div></div></section>
     <section class="content-section"><div class="page-wrap"><div class="page-eyebrow">INSTRUMENTS / STATUS</div>${groups}<div class="disclosure-box"><strong>方法论披露：</strong> 当前全部指数入口均按 Public reference / Demo-stage methodology 展示。未接入真实数据的字段不显示伪造数值；Official 与 Nowcast 将保持分离；模拟历史不得进入正式值；本页面 Not for settlement。</div></div></section>
-    <section class="content-section"><div class="page-wrap split-grid"><div class="content-label">PUBLIC → PRIVATE</div><div class="content-body"><h2>公开指数提供先验，真实执行形成后验。</h2><p>Public ACU 回答公开市场证据建议什么。Private ACU 回答在客户自己的任务、验证标准与约束下什么真正有效。客户数据未经许可、匿名化、聚合与治理批准，不进入公共指数。</p><p>长期闭环是：Public Quotes → Private Benchmark → Router → Ledger → Private ACU → Better Router。</p><a class="button button-dark" href="https://eu.jerrypsy.top:8443/pricing" target="_blank" rel="noreferrer">查看 API / 价格入口</a></div></div></section>
+    <section class="content-section"><div class="page-wrap split-grid"><div class="content-label">PUBLIC → PRIVATE</div><div class="content-body"><h2>公开指数提供先验，真实执行形成后验。</h2><p>Public ACU 回答公开市场证据建议什么。Private ACU 回答在客户自己的任务、验证标准与约束下什么真正有效。客户数据未经许可、匿名化、聚合与治理批准，不进入公共指数。</p><p>长期闭环是：Public Quotes → Private Benchmark → Router → Ledger → Private ACU → Better Router。</p><a class="button button-dark" href="https://eu.jerrypsy.top/acu/pricing" target="_blank" rel="noreferrer">查看 API / 价格入口</a></div></div></section>
   </main>`;
 }
 
 function articlesHtml(): string {
-  return `<main id="main" class="page-main"><section class="page-hero"><div class="page-wrap"><div class="page-eyebrow">EDITORIAL / RESEARCH NOTES</div><h1 class="page-title">关于 AI 产能的<br>十个基本判断</h1><p class="page-intro">不使用图库封面，不发布虚构新闻。文章围绕任务原生计量、成本质量前沿、动态路由与私有产能账本展开。</p></div></section><section class="content-section"><div class="page-wrap"><div class="editorial-list">${articles.map((a,i) => `<a class="article-row" href="/articles/${a.slug}/"><span class="article-no">${String(i+1).padStart(2,'0')}</span><div><div class="article-title">${a.title}</div><div class="article-summary">${a.summary}</div></div><div class="article-meta">${a.category}</div><div class="article-meta">${a.date}</div></a>`).join('')}</div></div></section></main>`;
+  return `<main id="main" class="page-main"><section class="page-hero"><div class="page-wrap"><div class="page-eyebrow">EDITORIAL / RESEARCH NOTES</div><h1 class="page-title">关于 AI 产能的<br>十个基本判断</h1><p class="page-intro">不使用图库封面，不发布虚构新闻。文章围绕任务原生计量、成本质量前沿、动态路由与私有产能账本展开。</p></div></section><section class="content-section"><div class="page-wrap"><div class="editorial-list">${articles.map((a,i) => `<a class="article-row" href="${sitePath(`/articles/${a.slug}/`)}"><span class="article-no">${String(i+1).padStart(2,'0')}</span><div><div class="article-title">${a.title}</div><div class="article-summary">${a.summary}</div></div><div class="article-meta">${a.category}</div><div class="article-meta">${a.date}</div></a>`).join('')}</div></div></section></main>`;
 }
 
 function articleHtml(article: Article): string {
   const idx = articles.findIndex(a => a.slug === article.slug);
   const prev = idx > 0 ? articles[idx-1] : null;
   const next = idx < articles.length-1 ? articles[idx+1] : null;
-  return `<main id="main" class="article-detail"><section class="article-hero"><div class="page-wrap"><div class="page-eyebrow">${article.category} / ACUindex Editorial</div><h1 class="article-title-large">${article.title}</h1><p class="article-dek">${article.dek}</p><div class="article-meta-line"><span>${article.date}</span><span>清度科技研究组</span><span>方法论观点 · 非新闻稿</span></div></div></section><div class="article-layout"><aside class="article-toc" aria-label="文章目录"><strong>目录</strong>${article.sections.map(s => `<a href="#${s.id}">${s.title}</a>`).join('')}</aside><article class="article-body">${article.sections.map(s => `<h2 id="${s.id}">${s.title}</h2>${s.paragraphs.map(p => `<p>${p}</p>`).join('')}${s.quote ? `<blockquote>${s.quote}</blockquote>` : ''}`).join('')}</article></div><nav class="article-nav" aria-label="上一篇与下一篇">${prev ? `<a href="/articles/${prev.slug}/"><small>上一篇</small>${prev.title}</a>` : '<span></span>'}${next ? `<a href="/articles/${next.slug}/"><small>下一篇</small>${next.title}</a>` : '<a href="/articles/"><small>返回</small>全部文章</a>'}</nav></main>`;
+  return `<main id="main" class="article-detail"><section class="article-hero"><div class="page-wrap"><div class="page-eyebrow">${article.category} / ACUindex Editorial</div><h1 class="article-title-large">${article.title}</h1><p class="article-dek">${article.dek}</p><div class="article-meta-line"><span>${article.date}</span><span>清度科技研究组</span><span>方法论观点 · 非新闻稿</span></div></div></section><div class="article-layout"><aside class="article-toc" aria-label="文章目录"><strong>目录</strong>${article.sections.map(s => `<a href="#${s.id}">${s.title}</a>`).join('')}</aside><article class="article-body">${article.sections.map(s => `<h2 id="${s.id}">${s.title}</h2>${s.paragraphs.map(p => `<p>${p}</p>`).join('')}${s.quote ? `<blockquote>${s.quote}</blockquote>` : ''}`).join('')}</article></div><nav class="article-nav" aria-label="上一篇与下一篇">${prev ? `<a href="${sitePath(`/articles/${prev.slug}/`)}"><small>上一篇</small>${prev.title}</a>` : '<span></span>'}${next ? `<a href="${sitePath(`/articles/${next.slug}/`)}"><small>下一篇</small>${next.title}</a>` : `<a href="${sitePath('/articles/')}"><small>返回</small>全部文章</a>`}</nav></main>`;
 }
 
 function bookDemoHtml(): string {
@@ -483,20 +489,23 @@ function initTestimonials(): void {
 function initBooking(): void {
   const form=document.querySelector<HTMLFormElement>('#booking-form'); if(!form)return; const error=document.querySelector<HTMLElement>('.form-error')!; const success=document.querySelector<HTMLElement>('.form-success')!; const submit=form.querySelector<HTMLButtonElement>('button[type="submit"]')!; let ics=''; let bookingId='';
   form.addEventListener('submit',async e=>{e.preventDefault(); if(!form.reportValidity())return; submit.disabled=true;submit.textContent='提交中…';error.hidden=true;success.hidden=true;
-    try{const data=Object.fromEntries(new FormData(form).entries());const res=await fetch('/api/book-demo',{method:'POST',headers:{'Content-Type':'application/json','Idempotency-Key':crypto.randomUUID()},body:JSON.stringify(data)});const body=await res.json();if(!res.ok||!body.ok)throw new Error(body.error||'提交失败');ics=body.ics||'';bookingId=body.bookingId;success.hidden=false;success.querySelector('.success-message')!.textContent=body.emailStatus==='not_configured'?'开发环境回退：表单已通过服务端校验，但邮件服务未配置，邮件没有发送。':'预约提交成功，团队与预约邮箱均已收到确认邮件。';success.querySelector('.success-id')!.textContent=`预约编号：${bookingId}`;const dl=success.querySelector<HTMLButtonElement>('.download-ics')!;dl.hidden=!ics;form.reset();}catch(err){error.hidden=false;error.textContent=err instanceof Error?err.message:'提交失败，请稍后重试。';}finally{submit.disabled=false;submit.textContent='提交预约';}
+    try{const data=Object.fromEntries(new FormData(form).entries());const res=await fetch(sitePath('/api/book-demo'),{method:'POST',headers:{'Content-Type':'application/json','Idempotency-Key':crypto.randomUUID()},body:JSON.stringify(data)});const body=await res.json();if(!res.ok||!body.ok)throw new Error(body.error||'提交失败');ics=body.ics||'';bookingId=body.bookingId;success.hidden=false;success.querySelector('.success-message')!.textContent=body.emailStatus==='not_configured'?'开发环境回退：表单已通过服务端校验，但邮件服务未配置，邮件没有发送。':'预约提交成功，团队与预约邮箱均已收到确认邮件。';success.querySelector('.success-id')!.textContent=`预约编号：${bookingId}`;const dl=success.querySelector<HTMLButtonElement>('.download-ics')!;dl.hidden=!ics;form.reset();}catch(err){error.hidden=false;error.textContent=err instanceof Error?err.message:'提交失败，请稍后重试。';}finally{submit.disabled=false;submit.textContent='提交预约';}
   });
   success.querySelector<HTMLButtonElement>('.download-ics')?.addEventListener('click',()=>{if(!ics)return;const blob=new Blob([ics],{type:'text/calendar;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=`qingdu-demo-${bookingId}.ics`;a.click();URL.revokeObjectURL(url);});
 }
 
 function render(): void {
   const root=document.getElementById('root')!;
-  const path=(window.location.pathname.replace(/\/+$/,'')||'/');
+  const publicPath=window.location.pathname.startsWith(SITE_BASE)
+    ? window.location.pathname.slice(SITE_BASE.length)
+    : window.location.pathname;
+  const path=(publicPath.replace(/\/+$/,'')||'/');
   let body='';
   if(path==='/') body=homeHtml();
   else if(path==='/acu-index') body=acuIndexHtml();
   else if(path==='/articles') body=articlesHtml();
   else if(path==='/book-demo') body=bookDemoHtml();
-  else { const match=path.match(/^\/articles\/([^/]+)$/); const article=match?articles.find(a=>a.slug===match[1]):undefined; body=article?articleHtml(article):`<main class="error-page" id="main"><h1>页面不存在</h1><a class="button button-dark" href="/">返回首页</a></main>`; }
+  else { const match=path.match(/^\/articles\/([^/]+)$/); const article=match?articles.find(a=>a.slug===match[1]):undefined; body=article?articleHtml(article):`<main class="error-page" id="main"><h1>页面不存在</h1><a class="button button-dark" href="${sitePath()}">返回首页</a></main>`; }
   root.innerHTML=headerHtml(path)+body+footerHtml();
   initHeader();initReveal();initCalculator();initTestimonials();initBooking();
 }

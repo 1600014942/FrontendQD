@@ -3,6 +3,8 @@ import { readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import bookDemoHandler from './api/book-demo.js';
+
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), 'public');
 const port = Number(process.env.PORT || 4173);
 const mime = {
@@ -21,8 +23,24 @@ function safePath(urlPath) {
 const server = http.createServer(async (req, res) => {
   try {
     if (req.url?.startsWith('/api/book-demo')) {
-      res.writeHead(501, { 'Content-Type': 'application/json; charset=utf-8' });
-      res.end(JSON.stringify({ ok: false, error: '本地静态服务器不执行 Vercel Serverless API。请使用 vercel dev 或部署后测试邮件。' }));
+      let rawBody = '';
+      for await (const chunk of req) rawBody += chunk;
+      try {
+        req.body = rawBody ? JSON.parse(rawBody) : {};
+      } catch {
+        res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
+        res.end(JSON.stringify({ ok: false, error: '请求 JSON 格式不正确。' }));
+        return;
+      }
+      const response = {
+        status(code) { res.statusCode = code; return response; },
+        json(payload) {
+          res.setHeader('Content-Type', 'application/json; charset=utf-8');
+          res.setHeader('Cache-Control', 'no-store');
+          res.end(JSON.stringify(payload));
+        }
+      };
+      await bookDemoHandler(req, response);
       return;
     }
     let requested = safePath(req.url || '/');
