@@ -662,6 +662,11 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
 .misallocation .diagram-figure.visible .route-path:nth-child(6) { animation-delay: .60s; }
 .misallocation .diagram-figure.visible .route-path:nth-child(7) { animation-delay: .72s; }
 
+@media (prefers-reduced-motion: reduce) {
+  .misallocation .route-path,
+  .frontier .route-path { animation: none; stroke-dashoffset: 0; }
+}
+
 @media (max-width: 1100px) {
   .hero-source { height: 430px; right: 50%; top: 4%; transform: translateX(50%); animation: none; }
   .misallocation .diagram-heading,
