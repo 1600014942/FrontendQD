@@ -563,7 +563,7 @@ function initHeroParticleFlow() {
             }
             return { x: tx, y: ty };
         };
-        const particles = Array.from({ length: 24 }, () => { const particle = { x: 0, y: 0, vx: 0, vy: 0, life: 0 }; seed(particle); return particle; });
+        const particles = Array.from({ length: 30 }, () => { const particle = { x: 0, y: 0, vx: 0, vy: 0, life: 0 }; seed(particle); return particle; });
         const context = canvas.getContext('2d');
         if (!context)
             return;
@@ -585,12 +585,17 @@ function initHeroParticleFlow() {
                 const velocity = Math.hypot(particle.vx, particle.vy) || 1;
                 particle.vx /= velocity;
                 particle.vy /= velocity;
-                particle.x += particle.vx * 42 * delta;
-                particle.y += particle.vy * 42 * delta;
+                particle.x += particle.vx * 52 * delta;
+                particle.y += particle.vy * 52 * delta;
                 particle.life += delta;
+                const drawX = particle.x / width * rect.width, drawY = particle.y / height * rect.height;
                 context.beginPath();
-                context.arc(particle.x / width * rect.width, particle.y / height * rect.height, 1.65, 0, Math.PI * 2);
-                context.fillStyle = 'rgba(17,17,17,.78)';
+                context.arc(drawX, drawY, 3.1, 0, Math.PI * 2);
+                context.fillStyle = 'rgba(247,246,242,.9)';
+                context.fill();
+                context.beginPath();
+                context.arc(drawX, drawY, 1.85, 0, Math.PI * 2);
+                context.fillStyle = 'rgba(17,17,17,.86)';
                 context.fill();
             });
             frame = requestAnimationFrame(draw);
