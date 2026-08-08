@@ -450,7 +450,7 @@ function acuIndexHtml(): string {
 }
 
 function articlesHtml(): string {
-  return `<main id="main" class="page-main"><section class="page-hero"><div class="page-wrap"><div class="page-eyebrow">EDITORIAL / RESEARCH NOTES</div><h1 class="page-title">关于 AI 产能的<br>十个基本判断</h1><p class="page-intro">不使用图库封面，不发布虚构新闻。文章围绕任务原生计量、成本质量前沿、动态路由与私有产能账本展开。</p></div></section><section class="content-section"><div class="page-wrap"><div class="editorial-list">${articles.map((a,i) => `<a class="article-row" href="/articles/${a.slug}/"><span class="article-no">${String(i+1).padStart(2,'0')}</span><div><div class="article-title">${a.title}</div><div class="article-summary">${a.summary}</div></div><div class="article-meta">${a.category}</div><div class="article-meta">${a.date}</div></a>`).join('')}</div></div></section></main>`;
+  return `<main id="main" class="page-main"><section class="page-hero"><div class="page-wrap"><div class="page-eyebrow">EDITORIAL / RESEARCH NOTES</div><h1 class="page-title">关于 AI 产能的<br>十个基本判断</h1></div></section><section class="content-section"><div class="page-wrap"><div class="editorial-list">${articles.map((a,i) => `<a class="article-row" href="/articles/${a.slug}/"><span class="article-no">${String(i+1).padStart(2,'0')}</span><div><div class="article-title">${a.title}</div><div class="article-summary">${a.summary}</div></div><div class="article-meta">${a.category}</div><div class="article-meta">${a.date}</div></a>`).join('')}</div></div></section></main>`;
 }
 
 function articleHtml(article: Article): string {
