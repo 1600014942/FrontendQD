@@ -471,7 +471,7 @@ function acuIndexHtml(): string {
 }
 
 function articlesHtml(): string {
-  return `<main id="main" class="page-main"><section class="page-hero"><div class="page-wrap"><div class="page-eyebrow">EDITORIAL / RESEARCH NOTES</div><h1 class="page-title">关于 AI 产能的<br>十个基本判断</h1></div></section><section class="content-section"><div class="page-wrap"><div class="editorial-list">${articles.map((a,i) => `<a class="article-row" href="/articles/${a.slug}/"><span class="article-no">${String(i+1).padStart(2,'0')}</span><div><div class="article-title">${a.title}</div><div class="article-summary">${a.summary}</div></div><div class="article-meta">${a.category}</div><div class="article-meta">${a.date}</div></a>`).join('')}</div></div></section></main>`;
+  return `<main id="main" class="page-main"><section class="page-hero"><div class="page-wrap"><div class="page-eyebrow">EDITORIAL / RESEARCH NOTES</div><h1 class="page-title">关于 AI 产能的<br>十个基本判断</h1><p class="page-intro">超越 Token 之路：从 AI 产能的计量、定价到配置，讨论如何从 Token 消耗出发，建立可衡量、可比较、可优化的有效产能体系。</p></div></section><section class="content-section"><div class="page-wrap"><div class="editorial-list">${articles.map((a,i) => `<a class="article-row" href="/articles/${a.slug}/"><span class="article-no">${String(i+1).padStart(2,'0')}</span><div><div class="article-title">${a.title}</div><div class="article-summary">${a.summary}</div></div><div class="article-meta">${a.category}</div><div class="article-meta">${a.date}</div></a>`).join('')}</div></div></section></main>`;
 }
 
 function articleHtml(article: Article): string {
