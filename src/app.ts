@@ -430,9 +430,9 @@ function homeHtml(): string {
     <section class="screen testimonials"><div class="screen-inner">
       <div class="testimonials-head"><div><div class="section-kicker testimonials-kicker">PRIVATE CAPACITY IN PRACTICE</div><h2 class="testimonials-title">来自真实使用场景的反馈</h2></div></div>
       <div class="testimonial-viewport" tabindex="0" role="region" aria-label="客户评价卡片，可横向滚动"><div class="testimonial-track">
-        <article class="testimonial-card"><blockquote>接入清度后，我们第一次知道，每一美元究竟买到了多少真正可用的 AI 产能。</blockquote><footer><span class="testimonial-avatar avatar-one" role="img" aria-label="客户头像"></span><span class="testimonial-person"><strong>某伦敦对冲基金</strong><span>量化工程负责人</span></span></footer></article>
-        <article class="testimonial-card"><blockquote>清度把模型选择从一套静态规则，变成了能够根据真实任务结果持续学习的产能配置系统。</blockquote><footer><span class="testimonial-avatar avatar-two" role="img" aria-label="客户头像"></span><span class="testimonial-person"><strong>某 AIGC 厂牌</strong><span>视频负责人</span></span></footer></article>
-        <article class="testimonial-card"><blockquote>清度帮助我们在不牺牲交付质量的情况下，把更多请求从昂贵模型迁移到更合适的路径。</blockquote><footer><span class="testimonial-avatar avatar-three" role="img" aria-label="客户头像"></span><span class="testimonial-person"><strong>某具身智能公司</strong><span>创始人</span></span></footer></article>
+        <article class="testimonial-card"><blockquote>接入清度后，我们第一次知道，每一美元究竟买到了多少真正可用的 AI 产能。</blockquote><footer><span class="testimonial-avatar avatar-one" role="img" aria-label="客户头像"></span><span class="testimonial-person"><strong>Liam McCauley</strong><span>伦敦对冲基金量化工程负责人</span></span></footer></article>
+        <article class="testimonial-card"><blockquote>清度把模型选择从一套静态规则，变成了能够根据真实任务结果持续学习的产能配置系统。</blockquote><footer><span class="testimonial-avatar avatar-two" role="img" aria-label="客户头像"></span><span class="testimonial-person"><strong>Vincent Qii</strong><span>影视级AIGC厂牌创始人</span></span></footer></article>
+        <article class="testimonial-card"><blockquote>清度帮助我们在不牺牲交付质量的情况下，把更多请求从昂贵模型迁移到更合适的路径。</blockquote><footer><span class="testimonial-avatar avatar-three" role="img" aria-label="客户头像"></span><span class="testimonial-person"><strong>Matt Wong</strong><span>头部具身智能公司创始人</span></span></footer></article>
       </div></div>
     </div></section>
 
