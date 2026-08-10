@@ -27,6 +27,6 @@
 
 ## 域名与品牌元数据
 
-- 示例 canonical 与 sitemap 使用 `https://acuindex.cn`，部署前应按真实域名替换；
+- canonical 与 sitemap 已统一使用正式域名 `https://acucompute.com`；
 - Open Graph 使用本地 SVG 品牌图；
 - 未提供 ICP、隐私政策或公司注册地址，因此未自行补写。

@@ -23,7 +23,7 @@ function makeIcs(data, bookingId) {
   const stamp = new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z');
   return [
     'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Qingdu Technology//ACUindex Demo Booking//CN','CALSCALE:GREGORIAN','METHOD:PUBLISH','BEGIN:VEVENT',
-    `UID:${bookingId}@acuindex.cn`, `DTSTAMP:${stamp}`, `DTSTART;TZID=${escapeIcs(data.timezone)}:${start}`, `DTEND;TZID=${escapeIcs(data.timezone)}:${end}`,
+    `UID:${bookingId}@acucompute.com`, `DTSTAMP:${stamp}`, `DTSTART;TZID=${escapeIcs(data.timezone)}:${start}`, `DTEND;TZID=${escapeIcs(data.timezone)}:${end}`,
     'SUMMARY:清度科技 / ACUindex 预约演示',
     `DESCRIPTION:${escapeIcs(`公司：${data.company}\n场景：${data.scenario}\n预约编号：${bookingId}\n会议说明：清度团队将在确认后补充线上会议链接。`)}`,
     'LOCATION:线上会议（链接待确认）','STATUS:TENTATIVE','END:VEVENT','END:VCALENDAR'

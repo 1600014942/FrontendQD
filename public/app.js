@@ -260,8 +260,8 @@ function headerHtml(path) {
       <button class="mobile-toggle" aria-expanded="false" aria-label="打开导航菜单"><span></span><span></span></button>
       <nav class="main-nav" aria-label="主导航">
         <a href="/acu-index/"${current('/acu-index')}>ACU 指数</a>
-        <a href="https://eu.jerrypsy.top/acu-router/" target="_blank" rel="noreferrer">成本优化器</a>
-        <a href="https://eu.jerrypsy.top:8443/dashboard/overview" target="_blank" rel="noreferrer">控制台</a>
+        <a href="https://demo.acucompute.com/" target="_blank" rel="noreferrer">成本优化器</a>
+        <a href="https://console.acucompute.com/dashboard/overview" target="_blank" rel="noreferrer">控制台</a>
         <a href="/articles/"${current('/articles')}>理论</a>
         <a class="contact-button" href="/book-demo/"${current('/book-demo')}>联系我们</a>
       </nav>
@@ -269,7 +269,7 @@ function headerHtml(path) {
   </header>`;
 }
 function footerHtml() {
-    return `<footer class="site-footer"><div class="footer-inner"><span>© ${new Date().getFullYear()} 清度科技 / ACUindex</span><div class="footer-links"><a href="/acu-index/">方法论</a><a href="/articles/">文章</a><a href="https://eu.jerrypsy.top:8443/pricing" target="_blank" rel="noreferrer">API / 价格</a><a href="/book-demo/">预约演示</a></div></div></footer>`;
+    return `<footer class="site-footer"><div class="footer-inner"><span>© ${new Date().getFullYear()} 清度科技 / ACUindex</span><div class="footer-links"><a href="/acu-index/">方法论</a><a href="/articles/">文章</a><a href="https://console.acucompute.com/pricing" target="_blank" rel="noreferrer">API / 价格</a><a href="/book-demo/">预约演示</a></div></div></footer>`;
 }
 function diagramFrame(svg, alt) {
     return `<div class="reveal diagram-figure" role="img" aria-label="${alt}">${svg}</div>`;
@@ -429,7 +429,7 @@ function homeHtml() {
       <div class="ending-main">
         <div class="ending-brand-block"><a class="ending-brand" href="/"><span class="ending-brand-acu">ACUindex</span><span class="ending-brand-cn">清度</span></a><p>AI 产能配置基础设施</p></div>
         <nav class="ending-grid" aria-label="页脚导航">
-          <div><span class="ending-label">产品</span><a href="/acu-index/">ACU 指数</a><a href="https://eu.jerrypsy.top/acu-router/" target="_blank" rel="noreferrer">成本优化器</a><a href="https://eu.jerrypsy.top:8443/dashboard/overview" target="_blank" rel="noreferrer">控制台</a><a href="https://eu.jerrypsy.top:8443/pricing" target="_blank" rel="noreferrer">API / 价格</a></div>
+          <div><span class="ending-label">产品</span><a href="/acu-index/">ACU 指数</a><a href="https://demo.acucompute.com/" target="_blank" rel="noreferrer">成本优化器</a><a href="https://console.acucompute.com/dashboard/overview" target="_blank" rel="noreferrer">控制台</a><a href="https://console.acucompute.com/pricing" target="_blank" rel="noreferrer">API / 价格</a></div>
           <div><span class="ending-label">研究</span><a href="/articles/">文章</a><a href="/acu-index/">ACU 方法论</a></div>
           <div><span class="ending-label">公司</span><a href="/book-demo/">联系我们</a><a href="/book-demo/">预约演示</a></div>
         </nav>
@@ -451,7 +451,7 @@ function acuIndexHtml() {
     <section class="page-hero"><div class="page-wrap"><div class="page-eyebrow">ACU Index / Public Reference</div><h1 class="page-title">为 AI 产能建立<br>可比较的计量口径</h1><p class="page-intro">ACU 是任务族原生的 AI 产能单位，不是通用智能分数，也不是 Token 单价。当前页面为 Demo-stage methodology 与产品入口，不提供结算指数。</p></div></section>
     <section class="content-section"><div class="page-wrap split-grid"><div class="content-label">UNIT &amp; BOUNDARY</div><div class="content-body"><h2>先定义任务、验证与成本边界，再讨论指数。</h2><p>ACU 把公开 Benchmark 结果翻译为任务族报价，同时保留模型—运行时身份、验证器类型、成本模式、置信度与数据模式。缺失值保持缺失，不被当作 0。</p><div class="definition-grid">${defs.map(d => `<div class="definition"><div class="definition-symbol">${d[0]}</div><p>${d[1]}</p></div>`).join('')}</div></div></div></section>
     <section class="content-section"><div class="page-wrap"><div class="page-eyebrow">INSTRUMENTS / STATUS</div>${groups}</div></section>
-    <section class="content-section"><div class="page-wrap split-grid"><div class="content-label">PUBLIC → PRIVATE</div><div class="content-body"><h2>质量-价格模型：数学提供先验，统计提供后验。</h2><p>Public ACU 回答公开市场证据建议什么。Private ACU 回答在客户自己的任务、验证标准与约束下什么真正有效。客户数据未经许可、匿名化、聚合与治理批准，不进入公共指数。</p><p>长期闭环是：Public Quotes → Private Benchmark → Router → Ledger → Private ACU → Better Router。</p><a class="button button-dark" href="https://eu.jerrypsy.top:8443/pricing" target="_blank" rel="noreferrer">查看 API / 价格入口</a></div></div></section>
+    <section class="content-section"><div class="page-wrap split-grid"><div class="content-label">PUBLIC → PRIVATE</div><div class="content-body"><h2>质量-价格模型：数学提供先验，统计提供后验。</h2><p>Public ACU 回答公开市场证据建议什么。Private ACU 回答在客户自己的任务、验证标准与约束下什么真正有效。客户数据未经许可、匿名化、聚合与治理批准，不进入公共指数。</p><p>长期闭环是：Public Quotes → Private Benchmark → Router → Ledger → Private ACU → Better Router。</p><a class="button button-dark" href="https://console.acucompute.com/pricing" target="_blank" rel="noreferrer">查看 API / 价格入口</a></div></div></section>
   </main>`;
 }
 function articlesHtml() {

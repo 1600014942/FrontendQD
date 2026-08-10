@@ -26,7 +26,7 @@ const template = await readFile(path.join(root, 'src', 'shell.html'), 'utf8');
 for (const [route, title, description] of routes) {
   const outDir = route === '/' ? path.join(root, 'public') : path.join(root, 'public', route);
   await mkdir(outDir, { recursive: true });
-  const canonical = `https://acuindex.cn${route}`;
+  const canonical = `https://acucompute.com${route}`;
   const html = template
     .replaceAll('__TITLE__', title)
     .replaceAll('__DESCRIPTION__', description)

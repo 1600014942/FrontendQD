@@ -64,6 +64,6 @@ ACU 指数页不展示任何未经接入的实时数值，全部使用“未接�
 
 | 入口 | 地址 | 页面位置 |
 |---|---|---|
-| 成本优化器 | `https://eu.jerrypsy.top/acu-router/` | 主导航“成本优化器” |
-| 控制台 | `https://eu.jerrypsy.top:8443/dashboard/overview` | 主导航“控制台” |
-| API / 价格 | `https://eu.jerrypsy.top:8443/pricing` | 页脚与 ACU 指数页 CTA |
+| 成本优化器 | `https://demo.acucompute.com/` | 主导航“成本优化器” |
+| 控制台 | `https://console.acucompute.com/dashboard/overview` | 主导航“控制台” |
+| API / 价格 | `https://console.acucompute.com/pricing` | 页脚与 ACU 指数页 CTA |
