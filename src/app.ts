@@ -309,10 +309,10 @@ function misallocationSvg(): string {
       <circle cx="1024" cy="106" r="10"/><circle cx="1024" cy="292" r="10"/><circle cx="1024" cy="455" r="10"/><circle cx="1024" cy="600" r="10"/>
       <text x="1065" y="114" stroke="none">最强模型</text><text x="1065" y="300" stroke="none">推理模型</text><text x="1065" y="463" stroke="none">均衡模型</text><text x="1065" y="608" stroke="none">快速模型</text>
       <line x1="1290" y1="600" x2="1290" y2="72" stroke-width="1.15"/><path d="M1290 54 l-7 18 h14z"/>
-      <text x="1290" y="34" text-anchor="middle" stroke="none" class="axis-title">成本</text>
+      <text x="1290" y="34" text-anchor="middle" stroke="none" class="axis-title">模型能力</text>
     </g>
     <text x="110" y="665" class="axis-footer">任务类型</text><text x="1024" y="665" class="axis-footer" text-anchor="middle">模型层级</text>
-    <text x="720" y="700" class="diagram-footnote" text-anchor="middle">大多数工作负载仍在使用固定模型。</text>
+    <text x="720" y="700" class="diagram-footnote" text-anchor="middle">任务类型不同，决定所需的能力组合也不同。</text>
   </svg>`;
 }
 
@@ -338,7 +338,7 @@ function frontierSvg(): string {
       <text x="48" y="390" transform="rotate(-90 48 390)" class="axis-title">质量</text>
       <text x="1260" y="704" class="axis-title">成本</text><text x="1260" y="730" class="axis-sub">每个合格任务的成本</text>
     </g>
-    <text x="720" y="748" text-anchor="middle" class="diagram-footnote">保证质量，追求 Token 调度的性价比。</text>
+    <text x="720" y="748" text-anchor="middle" class="diagram-footnote">先达到质量标准，再比较执行路径的效率。</text>
   </svg>`;
 }
 
@@ -368,8 +368,8 @@ function homeHtml(): string {
   <main id="main">
     <section class="screen hero" id="home"><div class="screen-inner hero-grid">
       <div class="hero-copy">
-        <h1 class="hero-title"><span>释放每一滴</span><span class="token-line"><span class="latin">Token</span>的最大产能</span></h1>
-        <p class="hero-deck">AI 产能配置引擎，帮助用户在同样预算下，完成更多高质量任务</p>
+        <h1 class="hero-title"><span>让每一次 AI 调用</span><span class="token-line">产出更好的结果</span></h1>
+        <p class="hero-deck">AI 产能配置基础设施，针对不同任务匹配模型与执行路径，让输出更准确、更稳定、更可用。</p>
         <div class="hero-data">
           <div class="metric-grid">
             <div class="metric"><div class="metric-label">已为开发者节省</div><div class="metric-value" id="live-savings">¥ 84,279.01</div></div>
@@ -377,7 +377,7 @@ function homeHtml(): string {
             <div class="metric"><div class="metric-label"><span class="latin">Token</span>利用率提升</div><div class="metric-value" id="live-efficiency">29.4%</div></div>
             <div class="metric"><div class="metric-label">任务级稳定性</div><div class="metric-value">99.99%</div></div>
           </div>
-          <div class="hero-live-note"><span class="hero-live-dot" aria-hidden="true"></span><span>实时更新</span></div>
+          <div class="hero-live-note"><span class="hero-live-dot" aria-hidden="true"></span><span>Demo 数据 · 展示任务级配置结果</span></div>
         </div>
       </div>
       <div class="hero-visual" aria-label="清度原始流线场球体主视觉">
@@ -390,13 +390,13 @@ function homeHtml(): string {
     </div></div></section>
 
     <section class="screen diagram-screen misallocation"><div class="screen-inner">
-      <div class="reveal diagram-heading"><div class="section-kicker">1. AI 产能的错配</div><h2 class="section-title">加速从固定模型调用，到精细化配置 Token 的 AI 使用范式跃迁。</h2></div>
-      ${diagramFrame(misallocationSvg(),'不同任务类型被集中导向最强模型，右侧成本向上，体现固定强模型造成的产能错配。')}
+      <div class="reveal diagram-heading"><div class="section-kicker">1. 固定模型的质量盲区</div><h2 class="section-title">把所有任务交给同一个模型，不等于每次都得到最合适的结果。</h2></div>
+      ${diagramFrame(misallocationSvg(),'不同任务类型被集中导向同一模型，体现固定模型无法针对任务差异配置合适能力。')}
     </div></section>
 
     <section class="screen diagram-screen frontier"><div class="screen-inner">
-      <div class="reveal diagram-heading"><div class="section-kicker">2. 找到最低成本的合格路径</div><h2 class="section-title">同样的任务，以更低的成本完成。</h2></div>
-      ${diagramFrame(frontierSvg(),'成本质量有效前沿：在合格输出标准下，清度路线以 1.0× 成本达到目标，最强模型对应 3.2× 成本。')}
+      <div class="reveal diagram-heading"><div class="section-kicker">2. 让更多任务达到质量标准</div><h2 class="section-title">针对任务动态配置能力，让输出更稳定地达到业务标准。</h2></div>
+      ${diagramFrame(frontierSvg(),'成本—质量有效前沿示意：针对不同任务配置合适能力，在质量标准与成本之间选择可解释的执行路径。')}
     </div></section>
 
     <section class="screen diagram-screen loop"><div class="screen-inner">

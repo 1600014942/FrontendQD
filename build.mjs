@@ -6,7 +6,7 @@ const root = process.cwd();
 execFileSync('tsc', ['--project', 'tsconfig.json'], { stdio: 'inherit' });
 
 const routes = [
-  ['/', '清度科技｜AI 产能配置基础设施', '释放每一滴 Token 的最大产能。清度科技在质量达标前提下，为每项任务寻找最低成本的合格路径。'],
+  ['/', '清度科技｜AI 质量优化与产能配置基础设施', '清度科技通过任务识别、模型匹配与质量验证，让 AI 输出更准确、更稳定、更可用。'],
   ['/acu-index/', 'ACU 指数｜清度科技', 'ACU 是任务族原生的 AI 产能计量单位。了解 ACU、ACU/USD、USD/ACU、Public ACU 与 Private ACU。'],
   ['/articles/', '文章｜清度科技', '清度科技关于 AI 产能、任务级路由、成本质量有效前沿与 ACU 方法论的行业观点。'],
   ['/book-demo/', '预约演示｜清度科技', '预约清度科技 AI 产能配置与成本优化演示。'],
