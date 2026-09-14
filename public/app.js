@@ -407,20 +407,20 @@ function homeHtml() {
             <div class="projection-group">
               <div class="projection-group-label">质量变化</div>
               <div class="savings-row"><span>当前平均质量</span><strong id="current-quality">84.0%</strong></div>
-              <div class="savings-row"><span>接入清度后</span><strong id="after-quality">91.3%</strong></div>
+              <div class="savings-row"><span>接入清度后</span><strong id="after-quality">90.9%</strong></div>
             </div>
             <div class="projection-group">
               <div class="projection-group-label">成本变化</div>
               <div class="savings-row"><span>当前年度支出</span><strong id="current-spend">¥25.27M / 年</strong></div>
-              <div class="savings-row"><span>接入清度后</span><strong id="after-spend">¥16.68M / 年</strong></div>
+              <div class="savings-row"><span>接入清度后</span><strong id="after-spend">¥18.20M / 年</strong></div>
             </div>
           </div>
           <div class="savings-rule"></div>
           <div class="projection-outcomes">
-            <div class="projection-outcome"><div class="savings-main-label">质量效率提升</div><div class="savings-amount" id="quality-efficiency">4.28X</div><div class="savings-caption">基于任务验收与用户反馈建模</div></div>
-            <div class="projection-outcome"><div class="savings-main-label">预计年度节省</div><div class="savings-amount" id="savings-amount">¥8.59M</div><div class="savings-badge" id="savings-badge">约 34% 成本下降</div></div>
+            <div class="projection-outcome"><div class="savings-main-label">质量效率提升</div><div class="savings-amount" id="quality-efficiency">4.19X</div><div class="savings-caption">基于任务验收与用户反馈建模</div></div>
+            <div class="projection-outcome"><div class="savings-main-label">预计年度节省</div><div class="savings-amount" id="savings-amount">¥7.08M</div><div class="savings-badge" id="savings-badge">约 28% 成本下降</div></div>
           </div>
-          <div class="savings-rate" id="savings-rate">预计单位任务成本下降 33%</div>
+          <div class="savings-rate" id="savings-rate">预计单位任务成本下降 27%</div>
           <a class="button button-light" href="/book-demo/">预约专属测算</a>
         </div>
       </div>
@@ -510,14 +510,14 @@ function initCalculator() {
     const fmt = (n) => new Intl.NumberFormat('zh-CN', { style: 'currency', currency: 'CNY', maximumFractionDigits: 0 }).format(n);
     const compact = (n) => n >= 1000000 ? `¥${(n / 1000000).toFixed(2)}M` : `¥${Math.round(n / 1000)}K`;
     const quality = {
-        claude: { current: 84.2, after: 90.8, efficiency: 4.17 },
-        openai: { current: 83.9, after: 90.9, efficiency: 4.21 },
-        mixed: { current: 84.0, after: 91.3, efficiency: 4.28 }
+        claude: { current: 83.7, after: 90.6, efficiency: 4.16 },
+        openai: { current: 84.3, after: 91.2, efficiency: 4.22 },
+        mixed: { current: 84.0, after: 90.9, efficiency: 4.19 }
     };
     const setRange = (el, out, text) => { const min = Number(el.min), max = Number(el.max), value = Number(el.value), pct = ((value - min) / (max - min)) * 100; el.style.setProperty('--progress', `${pct}%`); out.style.left = `${pct}%`; out.textContent = text; };
     const update = () => {
         const t = Number(team.value), s = Number(spend.value);
-        const base = { claude: .27, openai: .29, mixed: .34 };
+        const base = { claude: .27, openai: .29, mixed: .28 };
         const adj = { low: -.02, medium: 0, high: .02 };
         const rate = Math.max(.18, Math.min(.42, base[structure] + adj[growth]));
         const current = t * s * 12, after = current * (1 - rate), savings = current - after, qualityResult = quality[structure];
