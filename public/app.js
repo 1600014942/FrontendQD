@@ -381,7 +381,7 @@ function homeHtml() {
     </div></section>
 
     <section class="screen diagram-screen frontier"><div class="screen-inner">
-      <div class="reveal diagram-heading"><div class="section-kicker">2. 让更多任务达到质量标准</div><h2 class="section-title">针对任务动态配置能力，让输出更稳定地达到业务标准。</h2></div>
+      <div class="reveal diagram-heading"><div class="section-kicker">2. 让更多任务达到质量标准</div><h2 class="section-title">按任务配置能力，让输出稳定达到业务标准。</h2></div>
       ${diagramFrame(frontierSvg(), '成本—质量有效前沿示意：针对不同任务配置合适能力，在质量标准与成本之间选择可解释的执行路径。')}
     </div></section>
 
@@ -395,8 +395,8 @@ function homeHtml() {
       <div class="calculator-title-row reveal"><div><div class="section-kicker calculator-kicker">QUALITY &amp; SAVINGS ESTIMATOR</div><h2 class="section-title">质量能提升多少，成本能优化多少？</h2></div><p>输入团队规模与当前 AI 支出，同时估算质量提升与年度成本优化空间。</p></div>
       <div class="reveal calculator-shell">
         <div class="calculator-controls">
-          <div class="control-row"><label class="control-label" for="team-range">团队规模</label><div class="range-wrap"><output class="range-value" id="team-output" for="team-range">345</output><input id="team-range" type="range" min="5" max="500" step="5" value="345"></div></div>
-          <div class="control-row"><label class="control-label" for="spend-range">人均月度 AI 支出</label><div class="range-wrap"><output class="range-value" id="spend-output" for="spend-range">¥2,900</output><input id="spend-range" type="range" min="100" max="10000" step="100" value="2900"></div></div>
+          <div class="control-row"><label class="control-label" for="team-range">团队规模</label><div class="range-wrap"><output class="range-value" id="team-output" for="team-range">390</output><input id="team-range" type="range" min="5" max="500" step="5" value="390"></div></div>
+          <div class="control-row"><label class="control-label" for="spend-range">人均月度 AI 支出</label><div class="range-wrap"><output class="range-value" id="spend-output" for="spend-range">¥5,400</output><input id="spend-range" type="range" min="100" max="10000" step="100" value="5400"></div></div>
           <div class="control-row"><div class="control-label">月度用量增速</div><div class="segmented" data-segment="growth"><button type="button" data-value="low" aria-pressed="false">低</button><button type="button" data-value="medium" aria-pressed="true">中</button><button type="button" data-value="high" aria-pressed="false">高</button></div></div>
           <div class="control-row"><div class="control-label">当前使用结构</div><div class="segmented" data-segment="structure"><button type="button" data-value="claude" aria-pressed="false">Claude</button><button type="button" data-value="openai" aria-pressed="false">OpenAI</button><button type="button" data-value="mixed" aria-pressed="true">混合</button></div></div>
           <p class="calculator-disclaimer"><span aria-hidden="true">ⓘ</span> 结果基于质量与成本联合建模，仅作测算参考。</p>
@@ -411,16 +411,16 @@ function homeHtml() {
             </div>
             <div class="projection-group">
               <div class="projection-group-label">成本变化</div>
-              <div class="savings-row"><span>当前年度支出</span><strong id="current-spend">¥12.01M / 年</strong></div>
-              <div class="savings-row"><span>接入清度后</span><strong id="after-spend">¥8.16M / 年</strong></div>
+              <div class="savings-row"><span>当前年度支出</span><strong id="current-spend">¥25.27M / 年</strong></div>
+              <div class="savings-row"><span>接入清度后</span><strong id="after-spend">¥16.68M / 年</strong></div>
             </div>
           </div>
           <div class="savings-rule"></div>
           <div class="projection-outcomes">
-            <div class="projection-outcome"><div class="savings-main-label">预估产能质量</div><div class="savings-amount">+7.3%</div><div class="savings-caption">基于任务验收与用户反馈建模</div></div>
-            <div class="projection-outcome"><div class="savings-main-label">预计年度节省</div><div class="savings-amount" id="savings-amount">¥3.84M</div><div class="savings-badge" id="savings-badge">约 32% 成本下降</div></div>
+            <div class="projection-outcome"><div class="savings-main-label">质量效率提升</div><div class="savings-amount">4.28X</div><div class="savings-caption">基于任务验收与用户反馈建模</div></div>
+            <div class="projection-outcome"><div class="savings-main-label">预计年度节省</div><div class="savings-amount" id="savings-amount">¥8.59M</div><div class="savings-badge" id="savings-badge">约 34% 成本下降</div></div>
           </div>
-          <div class="savings-rate" id="savings-rate">预计单位任务成本下降 31%</div>
+          <div class="savings-rate" id="savings-rate">预计单位任务成本下降 33%</div>
           <a class="button button-light" href="/book-demo/">预约专属测算</a>
         </div>
       </div>
@@ -512,7 +512,7 @@ function initCalculator() {
     const setRange = (el, out, text) => { const min = Number(el.min), max = Number(el.max), value = Number(el.value), pct = ((value - min) / (max - min)) * 100; el.style.setProperty('--progress', `${pct}%`); out.style.left = `${pct}%`; out.textContent = text; };
     const update = () => {
         const t = Number(team.value), s = Number(spend.value);
-        const base = { claude: .27, openai: .29, mixed: .32 };
+        const base = { claude: .27, openai: .29, mixed: .34 };
         const adj = { low: -.02, medium: 0, high: .02 };
         const rate = Math.max(.18, Math.min(.42, base[structure] + adj[growth]));
         const current = t * s * 12, after = current * (1 - rate), savings = current - after;
@@ -537,7 +537,7 @@ function initLiveMetrics() {
     const tokens = document.querySelector('#live-tokens');
     if (!savings || !tokens || window.matchMedia('(prefers-reduced-motion: reduce)').matches)
         return;
-    let saved = 84279.01, tokenTotal = 1.2800, tick = 0;
+    let saved = 84281.35, tokenTotal = 1.2802, tick = 0;
     window.setInterval(() => {
         tick += 1;
         saved += .07 + (tick % 5) * .03;
