@@ -375,7 +375,7 @@ function homeHtml(): string {
             <div class="metric"><div class="metric-label">已为开发者节省:</div><div class="metric-value" id="live-savings">¥84,281.35</div></div>
             <div class="metric"><div class="metric-label">累计节省<span class="latin">Token</span></div><div class="metric-value" id="live-tokens">1.2802B</div></div>
             <div class="metric"><div class="metric-label">质量效率提升</div><div class="metric-value">4.28X</div></div>
-            <div class="metric"><div class="metric-value">99.99%</div></div>
+            <div class="metric"><div class="metric-label">任务级稳定性</div><div class="metric-value">99.99%</div></div>
           </div>
         </div>
       </div>
