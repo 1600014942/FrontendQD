@@ -346,7 +346,7 @@ function capacityLoopSvg(): string {
   const node = (x:number,w:number,label:string,dark=false) => `<rect x="${x}" y="145" width="${w}" height="58" rx="10" class="${dark ? 'node-dark' : 'node-light'}"/><text x="${x+w/2}" y="181" text-anchor="middle" class="${dark ? 'node-text-dark' : 'node-text'}">${label}</text>`;
   return `<svg class="diagram-svg loop-svg" viewBox="0 0 1440 720" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <defs><marker id="arrow-loop" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor"/></marker></defs>
-    <g transform="translate(75 0)">${node(55,130,'任务识别')}${node(260,130,'任务画像')}${node(465,150,'清度路由器',true)}${node(700,130,'执行调用')}${node(900,130,'质量验证')}${node(1105,130,'能力账本')}</g>
+    <g transform="translate(75 0)">${node(55,130,'公共先验')}${node(260,130,'任务画像')}${node(465,150,'配置建议',true)}${node(700,130,'轨迹观察')}${node(900,130,'质量判断')}${node(1105,130,'私有证据')}</g>
     <g transform="translate(75 0)" fill="none" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrow-loop)">
       <line x1="185" y1="174" x2="245" y2="174"/><line x1="390" y1="174" x2="450" y2="174"/><line x1="615" y1="174" x2="685" y2="174"/><line x1="830" y1="174" x2="885" y2="174"/><line x1="1030" y1="174" x2="1090" y2="174"/>
       <path class="route-path" d="M1170 214 C1170 380 1030 518 750 555 C485 590 255 535 220 415 C205 365 260 330 365 318 C430 310 505 288 525 220"/>
@@ -356,9 +356,9 @@ function capacityLoopSvg(): string {
     </g>
     <g class="diagram-labels">
       <g transform="translate(75 0)">
-      <text x="220" y="448" text-anchor="middle">成本</text><text x="390" y="578" text-anchor="middle">质量</text><text x="620" y="596" text-anchor="middle">回退方案</text><text x="855" y="569" text-anchor="middle">接受率</text><text x="1045" y="489" text-anchor="middle">延迟</text>
+      <text x="220" y="448" text-anchor="middle">成本</text><text x="390" y="578" text-anchor="middle">质量</text><text x="620" y="596" text-anchor="middle">接受 · 修改 · 拒绝</text><text x="855" y="569" text-anchor="middle">业务验收</text><text x="1045" y="489" text-anchor="middle">时延</text>
       </g>
-      <text x="720" y="405" text-anchor="middle" class="loop-title">私有产能曲线</text>
+      <text x="720" y="405" text-anchor="middle" class="loop-title">PRIVATE ACU · 用户专属后验</text>
     </g>
   </svg>`;
 }
@@ -374,7 +374,7 @@ function homeHtml(): string {
           <div class="metric-grid">
             <div class="metric"><div class="metric-label">已为开发者节省</div><div class="metric-value" id="live-savings">¥ 84,279.01</div></div>
             <div class="metric"><div class="metric-label">累计节省 <span class="latin">Token</span></div><div class="metric-value" id="live-tokens">1.2800B</div></div>
-            <div class="metric"><div class="metric-label"><span class="latin">Token</span>利用率提升</div><div class="metric-value" id="live-efficiency">29.4%</div></div>
+            <div class="metric"><div class="metric-label">整体质量结果提升</div><div class="metric-value">+7.3%</div></div>
             <div class="metric"><div class="metric-label">任务级稳定性</div><div class="metric-value">99.99%</div></div>
           </div>
           <div class="hero-live-note"><span class="hero-live-dot" aria-hidden="true"></span><span>Demo 数据 · 展示任务级配置结果</span></div>
@@ -400,28 +400,41 @@ function homeHtml(): string {
     </div></section>
 
     <section class="screen diagram-screen loop"><div class="screen-inner">
-      <div class="reveal diagram-heading"><div class="section-kicker">3. 构建私有产能闭环</div><h2 class="section-title">每一次调用，都让下一次路由更智能。</h2><p class="section-subtitle">清度将真实执行转化为私有产能账本，使未来的资源分配更加精准。</p></div>
-      ${diagramFrame(capacityLoopSvg(),'任务识别、任务画像、清度路由器、执行调用、质量验证、能力账本构成的私有产能闭环。')}
-      <p class="loop-diagram-caption">执行数据沉淀为更优的资源分配。</p>
+      <div class="reveal diagram-heading"><div class="section-kicker">3. PRIVATE ACU · 用户专属标准</div><h2 class="section-title">让智能为你而进化。</h2><p class="section-subtitle">Public ACU 提供公共能力与经济性先验；Private ACU 从真实任务的接受、修改、拒绝和业务验收中学习你的目标、品味与偏好。</p></div>
+      ${diagramFrame(capacityLoopSvg(),'公共先验经过任务画像与配置建议进入执行，系统观察轨迹、判断质量并沉淀私有证据，持续形成用户专属后验。')}
+      <p class="loop-diagram-caption">Judge 质量判断 · Observe 轨迹观察 · Learn 学习偏好 · Advise 纠偏与重配</p>
     </div></section>
 
     <section class="screen calculator-section"><div class="screen-inner">
-      <div class="calculator-title-row reveal"><div><div class="section-kicker calculator-kicker">SAVINGS ESTIMATOR</div><h2 class="section-title">一年能省多少钱？</h2></div><p>输入团队规模与当前 AI 支出，按等效质量口径估算可优化空间。</p></div>
+      <div class="calculator-title-row reveal"><div><div class="section-kicker calculator-kicker">QUALITY &amp; SAVINGS ESTIMATOR</div><h2 class="section-title">质量能提升多少，成本能优化多少？</h2></div><p>输入团队规模与当前 AI 支出，同时估算质量提升与年度成本优化空间。</p></div>
       <div class="reveal calculator-shell">
         <div class="calculator-controls">
-          <div class="control-row"><label class="control-label" for="team-range">团队规模</label><div class="range-wrap"><output class="range-value" id="team-output" for="team-range">120</output><input id="team-range" type="range" min="5" max="500" step="5" value="120"></div></div>
-          <div class="control-row"><label class="control-label" for="spend-range">人均月度 AI 支出</label><div class="range-wrap"><output class="range-value" id="spend-output" for="spend-range">¥2,000</output><input id="spend-range" type="range" min="100" max="10000" step="100" value="2000"></div></div>
+          <div class="control-row"><label class="control-label" for="team-range">团队规模</label><div class="range-wrap"><output class="range-value" id="team-output" for="team-range">345</output><input id="team-range" type="range" min="5" max="500" step="5" value="345"></div></div>
+          <div class="control-row"><label class="control-label" for="spend-range">人均月度 AI 支出</label><div class="range-wrap"><output class="range-value" id="spend-output" for="spend-range">¥2,900</output><input id="spend-range" type="range" min="100" max="10000" step="100" value="2900"></div></div>
           <div class="control-row"><div class="control-label">月度用量增速</div><div class="segmented" data-segment="growth"><button type="button" data-value="low" aria-pressed="false">低</button><button type="button" data-value="medium" aria-pressed="true">中</button><button type="button" data-value="high" aria-pressed="false">高</button></div></div>
           <div class="control-row"><div class="control-label">当前使用结构</div><div class="segmented" data-segment="structure"><button type="button" data-value="claude" aria-pressed="false">Claude</button><button type="button" data-value="openai" aria-pressed="false">OpenAI</button><button type="button" data-value="mixed" aria-pressed="true">混合</button></div></div>
-          <p class="calculator-disclaimer"><span aria-hidden="true">ⓘ</span> 结果基于等效质量建模，仅作测算参考。</p>
+          <p class="calculator-disclaimer"><span aria-hidden="true">ⓘ</span> 结果基于质量与成本联合建模，仅作测算参考。</p>
         </div>
         <div class="savings-panel" aria-live="polite">
-          <div class="savings-eyebrow">SAVINGS PROJECTION</div>
-          <div class="savings-row"><span>当前年度支出</span><strong id="current-spend">¥2.88M / 年</strong></div>
-          <div class="savings-row"><span>接入清度后</span><strong id="after-spend">¥1.96M / 年</strong></div>
-          <div class="savings-rule"></div><div class="savings-main-label">预计年度节省</div>
-          <div class="savings-main"><div class="savings-amount" id="savings-amount">¥922K</div><div class="savings-badge" id="savings-badge">约 32% 成本下降</div></div>
-          <div class="savings-caption">在保持同等任务质量与验收标准下</div><div class="savings-rate" id="savings-rate">预计单位任务成本下降 31%</div>
+          <div class="savings-eyebrow">QUALITY &amp; SAVINGS PROJECTION</div>
+          <div class="projection-comparison">
+            <div class="projection-group">
+              <div class="projection-group-label">质量变化</div>
+              <div class="savings-row"><span>当前平均质量</span><strong>84.0%</strong></div>
+              <div class="savings-row"><span>接入清度后</span><strong>91.3%</strong></div>
+            </div>
+            <div class="projection-group">
+              <div class="projection-group-label">成本变化</div>
+              <div class="savings-row"><span>当前年度支出</span><strong id="current-spend">¥12.01M / 年</strong></div>
+              <div class="savings-row"><span>接入清度后</span><strong id="after-spend">¥8.16M / 年</strong></div>
+            </div>
+          </div>
+          <div class="savings-rule"></div>
+          <div class="projection-outcomes">
+            <div class="projection-outcome"><div class="savings-main-label">预估产能质量</div><div class="savings-amount">+7.3%</div><div class="savings-caption">基于任务验收与用户反馈建模</div></div>
+            <div class="projection-outcome"><div class="savings-main-label">预计年度节省</div><div class="savings-amount" id="savings-amount">¥3.84M</div><div class="savings-badge" id="savings-badge">约 32% 成本下降</div></div>
+          </div>
+          <div class="savings-rate" id="savings-rate">预计单位任务成本下降 31%</div>
           <a class="button button-light" href="/book-demo/">预约专属测算</a>
         </div>
       </div>

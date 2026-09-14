@@ -131,6 +131,12 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
 .savings-row { display: flex; justify-content: space-between; gap: 30px; padding: 17px 0; font-size: 18px; }
 .savings-row strong { font-family: var(--din); font-size: 22px; font-weight: 400; }
 .savings-rule { height: 1px; background: rgba(255,255,255,.28); margin: 13px 0 25px; }
+.projection-comparison, .projection-outcomes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 34px; }
+.projection-group + .projection-group, .projection-outcome + .projection-outcome { border-left: 1px solid rgba(255,255,255,.2); padding-left: 34px; }
+.projection-group-label { color: #aaa; font-size: 14px; margin-bottom: 4px; }
+.projection-group .savings-row { gap: 8px; }
+.projection-group .savings-row strong { font-size: 18px; white-space: nowrap; }
+.projection-outcome { min-width: 0; }
 .savings-main-label { font-size: 18px; margin-bottom: 15px; }
 .savings-main { display: flex; align-items: end; justify-content: space-between; gap: 24px; }
 .savings-amount { font-family: var(--din); font-size: clamp(76px, 6vw, 112px); letter-spacing: -.045em; line-height: .95; }
@@ -553,7 +559,7 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
 .savings-panel { padding: 40px 42px 32px; }
 .savings-row { font-size: 16px; padding: 14px 0; }
 .savings-row strong { font-size: 20px; }
-.savings-amount { font-size: clamp(58px, 4.5vw, 82px); }
+.savings-amount { font-size: clamp(48px, 3.4vw, 64px); }
 .savings-main { gap: 16px; }
 
 .testimonial-track { gap: clamp(18px, 2vw, 30px); }
@@ -727,8 +733,13 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
   .frontier .diagram-figure,
   .loop .diagram-figure { width: 100%; }
   .calculator-controls { padding: 24px 22px 18px; }
+  .calculator-controls .control-row { grid-template-columns: 1fr; gap: 11px; min-height: 0; padding: 17px 0; align-items: start; }
+  .calculator-controls .segmented { gap: 8px; }
+  .calculator-controls .segmented button { min-width: 0; padding: 10px 8px; }
   .savings-panel { padding: 32px 24px 28px; }
-  .savings-amount { font-size: 58px; }
+  .projection-comparison, .projection-outcomes { grid-template-columns: 1fr; gap: 22px; }
+  .projection-group + .projection-group, .projection-outcome + .projection-outcome { border-left: 0; border-top: 1px solid rgba(255,255,255,.2); padding-left: 0; padding-top: 22px; }
+  .savings-amount { font-size: 54px; }
   .testimonial-track { grid-template-columns: repeat(3, minmax(84vw, 84vw)); }
   .testimonial-card { width: 84vw; min-height: 300px; }
   .page-title,
