@@ -356,15 +356,14 @@ function homeHtml() {
     <section class="screen hero" id="home"><div class="screen-inner hero-grid">
       <div class="hero-copy">
         <h1 class="hero-title"><span>让每一次 AI 调用</span><span class="token-line">产出更好的结果</span></h1>
-        <p class="hero-deck">AI 产能配置基础设施，针对不同任务匹配模型与执行路径，让输出更准确、更稳定、更可用。</p>
+        <p class="hero-deck">AI产能配置基础设施，针对不同任务匹配模型与执行路径，让输出更准确、更稳定、更可用。</p>
         <div class="hero-data">
           <div class="metric-grid">
-            <div class="metric"><div class="metric-label">已为开发者节省</div><div class="metric-value" id="live-savings">¥ 84,279.01</div></div>
-            <div class="metric"><div class="metric-label">累计节省 <span class="latin">Token</span></div><div class="metric-value" id="live-tokens">1.2800B</div></div>
-            <div class="metric"><div class="metric-label">整体质量结果提升</div><div class="metric-value">+7.3%</div></div>
-            <div class="metric"><div class="metric-label">任务级稳定性</div><div class="metric-value">99.99%</div></div>
+            <div class="metric"><div class="metric-label">已为开发者节省:</div><div class="metric-value" id="live-savings">¥84,281.35</div></div>
+            <div class="metric"><div class="metric-label">累计节省<span class="latin">Token</span></div><div class="metric-value" id="live-tokens">1.2802B</div></div>
+            <div class="metric"><div class="metric-label">质量效率提升</div><div class="metric-value">4.28X</div></div>
+            <div class="metric"><div class="metric-value">99.99%</div></div>
           </div>
-          <div class="hero-live-note"><span class="hero-live-dot" aria-hidden="true"></span><span>Demo 数据 · 展示任务级配置结果</span></div>
         </div>
       </div>
       <div class="hero-visual" aria-label="清度原始流线场球体主视觉">

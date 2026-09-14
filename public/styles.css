@@ -434,6 +434,9 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
 .hero { min-height: 100vh; padding-top: 94px; padding-bottom: 72px; }
 .hero-title { font-size: clamp(52px, 3.6vw, 72px); line-height: 1.08; max-width: 760px; }
 .hero-deck { max-width: 660px; font-size: clamp(16px, 1vw, 18px); line-height: 1.7; }
+@media (min-width: 1101px) {
+  .hero-deck { max-width: none; white-space: nowrap; }
+}
 .hero-data { margin-top: 56px; }
 .metric-value { font-variant-numeric: tabular-nums; }
 .section-kicker { font-size: 11px; margin-bottom: 18px; }
@@ -495,7 +498,7 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
   .screen { padding: 88px 0 72px; }
   .hero { padding-top: 68px; padding-bottom: 56px; }
   .hero-title { font-size: clamp(42px, 11vw, 54px); }
-  .hero-deck { font-size: 16px; }
+  .hero-deck { font-size: 16px; white-space: normal; }
   .section-title, .diagram-heading .section-title, .calculator-section .section-title { font-size: 34px; }
   .diagram-screen { padding-top: 88px; padding-bottom: 88px; }
   .diagram-figure { margin-top: 32px; }
