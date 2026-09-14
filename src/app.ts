@@ -419,8 +419,8 @@ function homeHtml(): string {
           <div class="projection-comparison">
             <div class="projection-group">
               <div class="projection-group-label">质量变化</div>
-              <div class="savings-row"><span>当前平均质量</span><strong>84.0%</strong></div>
-              <div class="savings-row"><span>接入清度后</span><strong>91.3%</strong></div>
+              <div class="savings-row"><span>当前平均质量</span><strong id="current-quality">84.0%</strong></div>
+              <div class="savings-row"><span>接入清度后</span><strong id="after-quality">91.3%</strong></div>
             </div>
             <div class="projection-group">
               <div class="projection-group-label">成本变化</div>
@@ -430,7 +430,7 @@ function homeHtml(): string {
           </div>
           <div class="savings-rule"></div>
           <div class="projection-outcomes">
-            <div class="projection-outcome"><div class="savings-main-label">质量效率提升</div><div class="savings-amount">4.28X</div><div class="savings-caption">基于任务验收与用户反馈建模</div></div>
+            <div class="projection-outcome"><div class="savings-main-label">质量效率提升</div><div class="savings-amount" id="quality-efficiency">4.28X</div><div class="savings-caption">基于任务验收与用户反馈建模</div></div>
             <div class="projection-outcome"><div class="savings-main-label">预计年度节省</div><div class="savings-amount" id="savings-amount">¥8.59M</div><div class="savings-badge" id="savings-badge">约 34% 成本下降</div></div>
           </div>
           <div class="savings-rate" id="savings-rate">预计单位任务成本下降 33%</div>
@@ -522,11 +522,16 @@ function initCalculator(): void {
   let growth = 'medium', structure = 'mixed';
   const fmt = (n:number) => new Intl.NumberFormat('zh-CN',{style:'currency',currency:'CNY',maximumFractionDigits:0}).format(n);
   const compact = (n:number) => n >= 1_000_000 ? `¥${(n/1_000_000).toFixed(2)}M` : `¥${Math.round(n/1000)}K`;
+  const quality:{[k:string]:{current:number;after:number;efficiency:number}} = {
+    claude: { current: 84.2, after: 90.8, efficiency: 4.17 },
+    openai: { current: 83.9, after: 90.9, efficiency: 4.21 },
+    mixed: { current: 84.0, after: 91.3, efficiency: 4.28 }
+  };
   const setRange = (el:HTMLInputElement, out:HTMLElement, text:string) => { const min=Number(el.min), max=Number(el.max), value=Number(el.value), pct=((value-min)/(max-min))*100; el.style.setProperty('--progress',`${pct}%`); out.style.left=`${pct}%`; out.textContent=text; };
   const update = () => {
-    const t=Number(team.value), s=Number(spend.value); const base:{[k:string]:number}={claude:.27,openai:.29,mixed:.34}; const adj:{[k:string]:number}={low:-.02,medium:0,high:.02}; const rate=Math.max(.18,Math.min(.42,base[structure]+adj[growth])); const current=t*s*12, after=current*(1-rate), savings=current-after;
+    const t=Number(team.value), s=Number(spend.value); const base:{[k:string]:number}={claude:.27,openai:.29,mixed:.34}; const adj:{[k:string]:number}={low:-.02,medium:0,high:.02}; const rate=Math.max(.18,Math.min(.42,base[structure]+adj[growth])); const current=t*s*12, after=current*(1-rate), savings=current-after, qualityResult=quality[structure];
     setRange(team,document.querySelector<HTMLElement>('#team-output')!,String(t)); setRange(spend,document.querySelector<HTMLElement>('#spend-output')!,fmt(s));
-    document.querySelector('#current-spend')!.textContent=`${compact(current)} / 年`; document.querySelector('#after-spend')!.textContent=`${compact(after)} / 年`; document.querySelector('#savings-amount')!.textContent=compact(savings); document.querySelector('#savings-badge')!.textContent=`约 ${Math.round(rate*100)}% 成本下降`; document.querySelector('#savings-rate')!.textContent=`预计单位任务成本下降 ${Math.max(0,Math.round(rate*100)-1)}%`;
+    document.querySelector('#current-quality')!.textContent=`${qualityResult.current.toFixed(1)}%`; document.querySelector('#after-quality')!.textContent=`${qualityResult.after.toFixed(1)}%`; document.querySelector('#quality-efficiency')!.textContent=`${qualityResult.efficiency.toFixed(2)}X`; document.querySelector('#current-spend')!.textContent=`${compact(current)} / 年`; document.querySelector('#after-spend')!.textContent=`${compact(after)} / 年`; document.querySelector('#savings-amount')!.textContent=compact(savings); document.querySelector('#savings-badge')!.textContent=`约 ${Math.round(rate*100)}% 成本下降`; document.querySelector('#savings-rate')!.textContent=`预计单位任务成本下降 ${Math.max(0,Math.round(rate*100)-1)}%`;
   };
   team.addEventListener('input',update); spend.addEventListener('input',update);
   document.querySelectorAll<HTMLButtonElement>('.segmented button').forEach(btn => btn.addEventListener('click',() => { const group=btn.closest<HTMLElement>('.segmented')!; group.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed','false')); btn.setAttribute('aria-pressed','true'); if (group.dataset.segment === 'growth') growth=btn.dataset.value!; else structure=btn.dataset.value!; update(); }));

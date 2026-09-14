@@ -406,8 +406,8 @@ function homeHtml() {
           <div class="projection-comparison">
             <div class="projection-group">
               <div class="projection-group-label">质量变化</div>
-              <div class="savings-row"><span>当前平均质量</span><strong>84.0%</strong></div>
-              <div class="savings-row"><span>接入清度后</span><strong>91.3%</strong></div>
+              <div class="savings-row"><span>当前平均质量</span><strong id="current-quality">84.0%</strong></div>
+              <div class="savings-row"><span>接入清度后</span><strong id="after-quality">91.3%</strong></div>
             </div>
             <div class="projection-group">
               <div class="projection-group-label">成本变化</div>
@@ -417,7 +417,7 @@ function homeHtml() {
           </div>
           <div class="savings-rule"></div>
           <div class="projection-outcomes">
-            <div class="projection-outcome"><div class="savings-main-label">质量效率提升</div><div class="savings-amount">4.28X</div><div class="savings-caption">基于任务验收与用户反馈建模</div></div>
+            <div class="projection-outcome"><div class="savings-main-label">质量效率提升</div><div class="savings-amount" id="quality-efficiency">4.28X</div><div class="savings-caption">基于任务验收与用户反馈建模</div></div>
             <div class="projection-outcome"><div class="savings-main-label">预计年度节省</div><div class="savings-amount" id="savings-amount">¥8.59M</div><div class="savings-badge" id="savings-badge">约 34% 成本下降</div></div>
           </div>
           <div class="savings-rate" id="savings-rate">预计单位任务成本下降 33%</div>
@@ -509,15 +509,23 @@ function initCalculator() {
     let growth = 'medium', structure = 'mixed';
     const fmt = (n) => new Intl.NumberFormat('zh-CN', { style: 'currency', currency: 'CNY', maximumFractionDigits: 0 }).format(n);
     const compact = (n) => n >= 1000000 ? `¥${(n / 1000000).toFixed(2)}M` : `¥${Math.round(n / 1000)}K`;
+    const quality = {
+        claude: { current: 84.2, after: 90.8, efficiency: 4.17 },
+        openai: { current: 83.9, after: 90.9, efficiency: 4.21 },
+        mixed: { current: 84.0, after: 91.3, efficiency: 4.28 }
+    };
     const setRange = (el, out, text) => { const min = Number(el.min), max = Number(el.max), value = Number(el.value), pct = ((value - min) / (max - min)) * 100; el.style.setProperty('--progress', `${pct}%`); out.style.left = `${pct}%`; out.textContent = text; };
     const update = () => {
         const t = Number(team.value), s = Number(spend.value);
         const base = { claude: .27, openai: .29, mixed: .34 };
         const adj = { low: -.02, medium: 0, high: .02 };
         const rate = Math.max(.18, Math.min(.42, base[structure] + adj[growth]));
-        const current = t * s * 12, after = current * (1 - rate), savings = current - after;
+        const current = t * s * 12, after = current * (1 - rate), savings = current - after, qualityResult = quality[structure];
         setRange(team, document.querySelector('#team-output'), String(t));
         setRange(spend, document.querySelector('#spend-output'), fmt(s));
+        document.querySelector('#current-quality').textContent = `${qualityResult.current.toFixed(1)}%`;
+        document.querySelector('#after-quality').textContent = `${qualityResult.after.toFixed(1)}%`;
+        document.querySelector('#quality-efficiency').textContent = `${qualityResult.efficiency.toFixed(2)}X`;
         document.querySelector('#current-spend').textContent = `${compact(current)} / 年`;
         document.querySelector('#after-spend').textContent = `${compact(after)} / 年`;
         document.querySelector('#savings-amount').textContent = compact(savings);
