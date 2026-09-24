@@ -359,8 +359,7 @@ function homeHtml() {
         <p class="hero-deck">AI产能配置基础设施，针对不同任务匹配模型与执行路径，让输出更准确、更稳定、更可用。</p>
         <div class="hero-data">
           <div class="metric-grid">
-            <div class="metric"><div class="metric-label">已为开发者节省:</div><div class="metric-value" id="live-savings">¥84,281.35</div></div>
-            <div class="metric"><div class="metric-label">累计节省<span class="latin">Token</span></div><div class="metric-value" id="live-tokens">1.2802B</div></div>
+            <div class="metric"><div class="metric-label">累计节省<span class="latin">Token</span></div><div class="metric-value">1.2803B</div></div>
             <div class="metric"><div class="metric-label">质量效率提升</div><div class="metric-value">4.28X</div></div>
             <div class="metric"><div class="metric-label">任务级稳定性</div><div class="metric-value">99.99%</div></div>
           </div>
@@ -540,21 +539,6 @@ function initCalculator() {
         structure = btn.dataset.value; update(); }));
     update();
 }
-function initLiveMetrics() {
-    const savings = document.querySelector('#live-savings');
-    const tokens = document.querySelector('#live-tokens');
-    if (!savings || !tokens || window.matchMedia('(prefers-reduced-motion: reduce)').matches)
-        return;
-    let saved = 84281.35, tokenTotal = 1.2802, tick = 0;
-    window.setInterval(() => {
-        tick += 1;
-        saved += .07 + (tick % 5) * .03;
-        tokenTotal += .00001;
-        savings.textContent = `¥ ${saved.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-        tokens.textContent = `${tokenTotal.toFixed(4)}B`;
-        [savings, tokens].forEach(el => { el.classList.remove('is-updating'); void el.offsetWidth; el.classList.add('is-updating'); });
-    }, 3200);
-}
 function initTestimonials() {
     const el = document.querySelector('.testimonial-viewport');
     if (!el)
@@ -636,7 +620,6 @@ function render() {
     initHeader();
     initReveal();
     initCalculator();
-    initLiveMetrics();
     initTestimonials();
     initBooking();
 }

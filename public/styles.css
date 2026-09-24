@@ -648,8 +648,8 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
 .testimonial-card footer .testimonial-person > span { font-size: 13px; }
 .instrument-time { font-size: 13px; }
 
-/* Four live hero indicators share equal columns and equal gutters. */
-.metric-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(18px, 2vw, 30px); }
+/* Hero indicators share equal columns and equal gutters. */
+.metric-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(18px, 2vw, 30px); }
 .metric { min-width: 0; }
 .metric-value { font-size: clamp(24px, 2vw, 32px); letter-spacing: 0; }
 .hero-live-note { display: inline-flex; align-items: center; gap: 8px; margin-top: 17px; color: var(--muted); font-size: 12px; line-height: 1.3; }
