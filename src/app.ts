@@ -268,7 +268,7 @@ function headerHtml(path: string): string {
       <nav class="main-nav" aria-label="主导航">
         <a href="/acu-index/"${current('/acu-index')}>ACU 指数</a>
         <a href="https://demo.acucompute.com/" target="_blank" rel="noreferrer">成本优化器</a>
-        <a href="https://console.acucompute.com/dashboard/overview" target="_blank" rel="noreferrer">控制台</a>
+        <a href="https://console.acucompute.com/dashboard/overview" target="_blank" rel="noreferrer">控制台入口</a>
         <a href="/articles/"${current('/articles')}>理论</a>
         <a class="contact-button" href="/book-demo/"${current('/book-demo')}>联系我们</a>
       </nav>
@@ -453,7 +453,7 @@ function homeHtml(): string {
       <div class="ending-main">
         <div class="ending-brand-block"><a class="ending-brand" href="/"><span class="ending-brand-acu">ACUindex</span><span class="ending-brand-cn">清度</span></a><p>AI 产能配置基础设施</p></div>
         <nav class="ending-grid" aria-label="页脚导航">
-          <div><span class="ending-label">产品</span><a href="/acu-index/">ACU 指数</a><a href="https://demo.acucompute.com/" target="_blank" rel="noreferrer">成本优化器</a><a href="https://console.acucompute.com/dashboard/overview" target="_blank" rel="noreferrer">控制台</a><a href="https://console.acucompute.com/pricing" target="_blank" rel="noreferrer">API / 价格</a></div>
+          <div><span class="ending-label">产品</span><a href="/acu-index/">ACU 指数</a><a href="https://demo.acucompute.com/" target="_blank" rel="noreferrer">成本优化器</a><a href="https://console.acucompute.com/dashboard/overview" target="_blank" rel="noreferrer">控制台入口</a><a href="https://console.acucompute.com/pricing" target="_blank" rel="noreferrer">API / 价格</a></div>
           <div><span class="ending-label">研究</span><a href="/articles/">文章</a><a href="/acu-index/">ACU 方法论</a></div>
           <div><span class="ending-label">公司</span><a href="/book-demo/">联系我们</a><a href="/book-demo/">预约演示</a></div>
         </nav>
