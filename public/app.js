@@ -366,7 +366,10 @@ function homeHtml() {
         </div>
       </div>
       <div class="hero-visual" aria-label="清度原始流线场球体主视觉">
-        <img class="hero-source" src="/assets/figures/hero-ball-transparent.png" alt="由细密流线构成的黑白球体，清度科技原始主视觉">
+        <picture>
+          <source srcset="/assets/figures/hero-ball-680-q58-20261106.avif" type="image/avif">
+          <img class="hero-source" src="/assets/figures/hero-ball-transparent.png" width="680" height="674" fetchpriority="high" decoding="async" alt="由细密流线构成的黑白球体，清度科技原始主视觉">
+        </picture>
       </div>
     </div></section>
 

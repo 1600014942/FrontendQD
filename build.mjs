@@ -30,7 +30,10 @@ for (const [route, title, description] of routes) {
   const html = template
     .replaceAll('__TITLE__', title)
     .replaceAll('__DESCRIPTION__', description)
-    .replaceAll('__CANONICAL__', canonical);
+    .replaceAll('__CANONICAL__', canonical)
+    .replace('__HERO_IMAGE_PRELOAD__', route === '/'
+      ? '\n  <link rel="preload" as="image" href="/assets/figures/hero-ball-680-q58-20261106.avif" type="image/avif" fetchpriority="high" />'
+      : '');
   await writeFile(path.join(outDir, 'index.html'), html);
 }
 console.log(`Built ${routes.length} routes.`);
